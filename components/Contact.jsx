@@ -3,7 +3,7 @@ import ImageBlock from './ImageBlock';
 const items = [
   {
     title: 'Mail me',
-    imgSrc: 'https://cdn.icon-icons.com/icons2/1182/PNG/512/1490129331-rounded07_82197.png',
+    imgSrc: '/mail.png',
     link: 'mailto:khadem.avinoor@gmail.com'
   },
   {
@@ -19,12 +19,14 @@ const items = [
   }
 ];
 
-function Footer() {
+function Contact({ asBar = false }) {
   return (
-    <div className="footer-wrapper">
-      <ImageBlock srcList={items} />
+    <div className={`contact-wrapper ${asBar ? 'contact-bar' : ''}`}>
+      <div className="pre-text">
+        <ImageBlock srcList={items} />
+      </div>
     </div>
   );
 }
 
-export default Footer;
+export default Contact;

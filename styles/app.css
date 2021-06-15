@@ -1,4 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap');
+:root {
+  --body-padding: 100px;
+}
 
 body {
   font-family: 'Source Sans Pro', sans-serif;
@@ -8,7 +11,8 @@ body {
   box-sizing: border-box;
   min-width: 600px;
   min-height: 400px;
-  padding: 0 100px;
+  padding: 0 var(--body-padding);
+  margin: 0;
 }
 body * {
   color: inherit;
@@ -185,9 +189,15 @@ hr.break-section.double {
   flex: 0 0 46%;
   width: 50%;
   margin-top: 20px;
-  padding-left: 10px;
-  padding-right: 10px;
+  padding: 10px;
   text-align: center;
+  border: 1px solid #DDD;
+  border-radius: 10px;
+  margin-right: 20px;
+}
+.portfolio-wrapper .portfolio-item:hover {
+  background-color: #DDD;
+  cursor: pointer;
 }
 .portfolio-wrapper .portfolio-item .portfolio-image {
   max-width: 100%;
@@ -236,30 +246,83 @@ hr.break-section.double {
   width: 100%;
 }
 
-.footer-wrapper {
+.mobile-only {
+  display: none;
+}
+
+.contact-wrapper {
   padding: 20px 30px;
-  /* margin: auto; */
-  display: block;
+  display: flex;
   width: fit-content;
   background-color: black;
   border-radius: 20px;
   border: 1px solid white;
 }
-.footer-wrapper::before {
-  content: 'Contact Me';
+.contact-wrapper .pre-text {
+  margin: auto 0 auto auto;
+}
+.contact-wrapper .pre-text::before {
+  content: 'Contact @';
   display: inline-block;
   vertical-align: middle;
 }
-.footer-wrapper .image-block-wrapper {
+.contact-wrapper.contact-bar {
+  width: calc(100% + var(--body-padding) + var(--body-padding));
+  margin-left: calc(-1 * var(--body-padding));
+  border-radius: 0;
+  border: 0;
+}
+.contact-wrapper .image-block-wrapper {
   margin-top: 0;
   margin-bottom: 0;
   display: inline-block;
   vertical-align: middle;
 }
-.footer-wrapper .image-block-wrapper .image-block-item {
+.contact-wrapper .image-block-wrapper .image-block-item {
   margin-left: 20px;
   width: 30px;
 }
-.footer-wrapper img {
+.contact-wrapper img {
   filter: invert(1) grayscale(100);
+}
+
+@media only screen and (max-width: 730px) {
+  body {
+    font-size: 18px;
+    padding: 0 50px;
+  }
+  .navbar .logo {
+    font-size: 22px;
+    font-weight: 600;
+    color: #000;
+    text-decoration: none;
+  }
+  .navbar .logo::after {
+    width: 24px;
+  }
+  .navbar .logo.upper-camel span {
+    font-size: 27px;
+  }
+  .hero .text-wrapper .title {
+    font-size: 36px;
+    margin-top: 0;
+    margin-bottom: 10px;
+    color: #000;
+  }
+  .hero .text-wrapper .title span:last-child {
+    font-size: 28px;
+  }
+  .hero .text-wrapper .description {
+    font-size: 18px;
+    line-height: 28px;
+  }
+  .hero .text-wrapper li {
+    font-size: 18px;
+  }
+  .portfolio-wrapper .portfolio-item .portfolio-name {
+    font-size: 18px;
+  }
+  .mobile-only {
+    display: initial;
+  }
 }

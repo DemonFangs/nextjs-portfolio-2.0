@@ -1,6 +1,7 @@
 import Head from 'next/head';
 import Link from 'next/link';
 
+import Contact from '../../components/Contact';
 import Navbar from '../../components/Navbar';
 
 function Portfolio() {
@@ -9,15 +10,15 @@ function Portfolio() {
       <Head>
         <title>Experiences</title>
       </Head>
-
+      
+      <Contact asBar={true} />
       <Navbar />
 
       <section className="hero">
         <div className="container">
           <div className="text-wrapper w-full">
-            <h1 className="title main">Experiences</h1>
-            <h2 className="sub-title">Work Experiences</h2>
-            <p className="description">My professional experiences</p>
+            <h1 className="title main">Experience</h1>
+            <p className="description">My professional experience. <span className="mobile-only">Touch catergory / box to see more.</span></p>
             <div className="portfolio-wrapper">
               <div className="portfolio-item">
                 <Link href="/experience/adb">

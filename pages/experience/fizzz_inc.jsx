@@ -1,5 +1,6 @@
 import Head from 'next/head';
 
+import Contact from '../../components/Contact';
 import ImageBlock from '../../components/ImageBlock';
 import Navbar from '../../components/Navbar';
 
@@ -10,6 +11,7 @@ function FizzzInc() {
         <title>Experience {'>'} Fizzz Design Inc.</title>
       </Head>
 
+      <Contact asBar={true} />
       <Navbar />
 
       <section className="hero">

@@ -1,5 +1,6 @@
 import Head from 'next/head';
 
+import Contact from '../components/Contact';
 import Navbar from '../components/Navbar';
 
 function About() {
@@ -9,6 +10,7 @@ function About() {
         <title>About</title>
       </Head>
 
+      <Contact asBar={true} />
       <Navbar />
 
       <section className="hero">

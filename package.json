@@ -1,6 +1,6 @@
 {
   "name": "my-profile-web",
-  "version": "0.1.0",
+  "version": "2.0.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -10,8 +10,7 @@
   "dependencies": {
     "eslint-plugin-react": "^7.24.0",
     "react": "16.13.1",
-    "react-dom": "16.13.1",
-    "sass": "^1.26.10"
+    "react-dom": "16.13.1"
   },
   "devDependencies": {
     "eslint-config-prettier": "^8.3.0",

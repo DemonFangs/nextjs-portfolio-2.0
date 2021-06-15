@@ -1,6 +1,6 @@
 import Head from 'next/head';
 
-import Footer from '../components/Footer';
+import Contact from '../components/Contact';
 import Navbar from '../components/Navbar';
 
 const Home = () => {
@@ -10,6 +10,7 @@ const Home = () => {
         <title>Home</title>
       </Head>
 
+      <Contact asBar={true} />
       <Navbar />
 
       <section className="hero">
@@ -22,8 +23,6 @@ const Home = () => {
               drink lots of tea and listen to music.
             </p>
           </div>
-
-          <Footer />
         </div>
       </section>
     </>
