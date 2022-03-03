@@ -17,12 +17,18 @@ function About() {
         <div className="container">
           <div className="text-wrapper w-full">
             <h1 className="title">About</h1>
-            <p className="description">
-              An interest in Computer Programming led me to do a degree in Computer Science. It took
-              much longer than most, with ups and downs during these seven years. But with
-              persistence and perseverance through repeated failures have finally graduated. Let
-              this be an example how failure is not an obstacle but an opportunity to get stronger.
-            </p>
+            <div className="about-profile-content">
+              <p className="description">
+                An interest in Computer Programming led me to do a degree in Computer Science. It
+                took much longer than most, with ups and downs during these seven years. But with
+                persistence and perseverance through repeated failures have finally graduated. Let
+                this be an example how failure is not an obstacle but an opportunity to get
+                stronger.
+              </p>
+              <div className="profile-picture">
+                <img src="/profile_pic.jpg" alt="Khadem Avinoor Alam potrait" />
+              </div>
+            </div>
           </div>
         </div>
       </section>

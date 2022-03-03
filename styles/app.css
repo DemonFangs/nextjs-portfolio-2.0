@@ -286,6 +286,25 @@ hr.break-section.double {
   filter: invert(1) grayscale(100);
 }
 
+.about-profile-content {
+  display: grid;
+  grid-template-columns: auto 200px;
+  gap: 35px;
+}
+.about-profile-content .profile-picture {
+  width: 200px;
+  height: 200px;
+  overflow: hidden;
+  border-radius: 50%;
+}
+.about-profile-content .profile-picture img {
+  transform: translate(-42%, -40%) scale(0.2);
+}
+.about-profile-content .description {
+  font-size: 22px;
+  line-height: 40px;
+}
+
 @media only screen and (max-width: 730px) {
   body {
     font-size: 18px;
