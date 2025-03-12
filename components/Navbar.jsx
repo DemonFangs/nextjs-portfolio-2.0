@@ -1,20 +1,14 @@
 import Link from 'next/link';
 import { withRouter } from 'next/router';
 
+import Contact from './Contact';
+
 const NESTED_ACTIVE_CLASS = 'nested-active';
 
 function Navbar({ router }) {
   const navs = [
     { text: 'Home', href: '/' },
-    { text: 'About', href: '/about' },
-    {
-      text: 'Experience',
-      href: '/experience',
-      items: [
-        { text: 'AdBridg', href: '/experience/adb' },
-        { text: 'Fizzz Design Inc', href: '/experience/fizzz_inc' }
-      ]
-    }
+    { text: 'Experiences', href: '/experiences' },
   ];
 
   const isPath = (href, items = []) =>
@@ -50,8 +44,8 @@ function Navbar({ router }) {
     <nav className="navbar">
       <div className="container">
         <Link href="/">
-          <a className="logo upper-camel">
-            <span>K</span>hadem<span> A</span>.<span>A</span>
+          <a className="logo">
+            Khadem A. Alam
           </a>
         </Link>
 
@@ -64,6 +58,7 @@ function Navbar({ router }) {
           ))}
         </ul>
       </div>
+      <Contact />
     </nav>
   );
 }

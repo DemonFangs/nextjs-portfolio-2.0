@@ -5,22 +5,28 @@
 
 body {
   font-family: 'Source Sans Pro', sans-serif;
-  font-size: 18px;
+  font-size: 1.125rem;
   background-color: #AAA;
   color: white;
   box-sizing: border-box;
   min-width: 600px;
   min-height: 400px;
-  padding: 0 var(--body-padding);
   margin: 0;
 }
 body * {
   color: inherit;
   box-sizing: border-box;
 }
-a[href] {
-  color: white;
+
+.root-content-container {
+  padding: 0 var(--body-padding);
 }
+.root-content-container .container {
+  max-width: 980px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 hr.break-section {
   width: 40%;
   min-width: 200px;
@@ -31,13 +37,18 @@ hr.break-section.double {
   height: 3px;
   border-width: 1px 0;
 }
-.container {
-  max-width: 980px;
-  margin-left: auto;
-  margin-right: auto;
-}
+
 .navbar {
-  margin-top: 50px;
+  padding: 20px 30px;
+  display: flex;
+  background-color: black;
+  border-radius: 20px;
+  border: 1px solid white;
+  border-radius: 0;
+  border: 0;
+
+  position: sticky;
+  top: 0;
 }
 .navbar * {
   position: relative;
@@ -48,28 +59,12 @@ hr.break-section.double {
   height: 70px;
 }
 .navbar .logo {
-  font-size: 24px;
+  font-size: 1.5rem;
   text-transform: uppercase;
   letter-spacing: 3px;
 	font-weight: 600;
-	color: #000;
+	color: white;
   text-decoration: none;
-}
-.navbar .logo.upper-camel span {
-  font-size: 30px;
-}
-.navbar .logo::after {
-  content: '';
-  display: block;
-  position: absolute;
-  width: 30px;
-  height: 8px;
-  border-bottom-left-radius: 20px;
-  border-bottom-right-radius: 20px;
-  bottom: -7px;
-  right: 10px;
-  border: 2px solid black;
-  border-top: none;
 }
 .navbar .nav-links {
   display: flex;
@@ -85,7 +80,6 @@ hr.break-section.double {
   transition: opacity 0.3s;
 }
 .navbar .nav-links .nav-item.active {
-  color: #000;
   font-weight: 700;
 }
 .navbar .nav-links .nav-item.active:after {
@@ -95,7 +89,7 @@ hr.break-section.double {
   left: 0;
   width: 25px;
   height: 2px;
-  background-color: #000;
+  background-color: white;
 }
 .navbar .nav-links li:hover .nav-item.nested-active.active:after {
   opacity: 0;
@@ -124,6 +118,7 @@ hr.break-section.double {
 .navbar .nav-links li .nested-nav ul li:not(:first-child) {
   padding-top: 10px;
 }
+
 .hero {
   padding-top: 100px;
   padding-bottom: 100px;
@@ -140,7 +135,7 @@ hr.break-section.double {
   width: 100%;
 }
 .hero .text-wrapper .title {
-  font-size: 48px;
+  font-size: 3rem;
   margin-top: 0;
   margin-bottom: 10px;
   color: #000;
@@ -149,17 +144,17 @@ hr.break-section.double {
   display: block;
 }
 .hero .text-wrapper .title span:last-child {
-  font-size: 38px;
+  font-size: 2.375rem;
 }
 .hero .text-wrapper .description {
-  font-size: 22px;
-  line-height: 40px;
+  font-size: 1.375rem;
+  line-height: 2.5rem;
 }
 .hero.job-details .text-wrapper .description {
-  line-height: 30px;
+  line-height: 1.875rem;
 }
 .hero .text-wrapper li {
-  font-size: 22px;
+  font-size: 1.375rem;
 }
 .hero .text-wrapper .cta {
   display: inline-block;
@@ -178,6 +173,7 @@ hr.break-section.double {
   width: 50%;
   text-align: right;
 }
+
 .portfolio-wrapper {
   display: flex;
   flex-direction: row;
@@ -203,7 +199,7 @@ hr.break-section.double {
   max-width: 100%;
 }
 .portfolio-wrapper .portfolio-item .portfolio-name {
-  font-size: 24px;
+  font-size: 1.5rem;
   margin-top: 10px;
   margin-bottom: 10px;
   text-transform: capitalize;
@@ -228,22 +224,9 @@ hr.break-section.double {
   text-decoration: underline;
 }
 
-.image-block-wrapper {
-  display: block;
-  width: fit-content;
-  margin: 5% auto 0 auto;
-}
-.image-block-wrapper .image-block-item {
-  display: inline-block;
-  width: 60px;
-  vertical-align: middle;
-}
-.image-block-wrapper .image-block-item:not(:first-child) {
-  margin-left: 50px;
-}
-.image-block-wrapper .image-block-item img {
-  display: block;
-  width: 100%;
+hr.short {
+  width: 100px;
+  margin-inline: 0 auto;
 }
 
 .mobile-only {
@@ -251,36 +234,28 @@ hr.break-section.double {
 }
 
 .contact-wrapper {
-  padding: 20px 30px;
   display: flex;
   width: fit-content;
-  background-color: black;
-  border-radius: 20px;
-  border: 1px solid white;
+  background-color: transparent;
+  margin-left: auto;
 }
 .contact-wrapper .pre-text {
+  display: grid;
+  grid-template-columns: auto auto;
   margin: auto 0 auto auto;
+  gap: 10px;
 }
-.contact-wrapper .pre-text::before {
-  content: 'Contact @';
-  display: inline-block;
-  vertical-align: middle;
-}
-.contact-wrapper.contact-bar {
-  width: calc(100% + var(--body-padding) + var(--body-padding));
-  margin-left: calc(-1 * var(--body-padding));
-  border-radius: 0;
-  border: 0;
+.contact-wrapper .pre-text > div {
+  display: flex;
+  gap: 10px;
+  margin-block: auto;
 }
 .contact-wrapper .image-block-wrapper {
-  margin-top: 0;
-  margin-bottom: 0;
   display: inline-block;
   vertical-align: middle;
 }
 .contact-wrapper .image-block-wrapper .image-block-item {
-  margin-left: 20px;
-  width: 30px;
+  display: block;
 }
 .contact-wrapper img {
   filter: invert(1) grayscale(100);
@@ -296,50 +271,115 @@ hr.break-section.double {
   height: 200px;
   overflow: hidden;
   border-radius: 50%;
+  margin-top: 70px;
 }
 .about-profile-content .profile-picture img {
   transform: translate(-42%, -40%) scale(0.2);
 }
 .about-profile-content .description {
-  font-size: 22px;
-  line-height: 40px;
+  font-size: 1.35rem;
+  line-height: 2.5rem;
 }
 
-@media only screen and (max-width: 730px) {
+a.external-link {
+  color: 'black';
+  text-decoration: none;
+  display: inline-flex;
+  gap: 5px;
+}
+a.external-link img {
+  width: 25px;
+}
+
+p.sub-point {
+  font-size: 1.35rem;
+}
+
+.tags-wrapper {
+  display: grid;
+  color: black;
+  grid-template-columns: max-content auto;
+  gap: 5px;
+}
+.tags-wrapper.no-caption {
+  display: block;
+}
+.tags-wrapper .caption {
+  font-weight: bold;
+  font-size: 1.2rem;
+  padding-top: 2px;
+}
+.tags-wrapper .tags-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+.tags-wrapper .tags-container .tag-item {
+  width: fit-content;
+  padding: 3px 5px;
+  border: 1px solid rgb(107, 107, 107);
+}
+.tags-wrapper .tags-container .tag-item a {
+  font-size: 1.1rem;
+  color: black;
+  text-decoration: none;
+}
+
+@media only screen and (max-width: 1024px) {
+  :root {
+    --body-padding: 50px;
+  }
+
   body {
-    font-size: 18px;
-    padding: 0 50px;
+    font-size: 1.125rem;
+  }
+
+  .navbar {
+    padding: 10px 20px;
+  }
+  .navbar * {
+    font-size: 1rem;
   }
   .navbar .logo {
-    font-size: 22px;
-    font-weight: 600;
-    color: #000;
-    text-decoration: none;
+    font-size: 1.2rem;
   }
-  .navbar .logo::after {
-    width: 24px;
+
+  .contact-wrapper img {
+    width: 20px;
   }
-  .navbar .logo.upper-camel span {
-    font-size: 27px;
+
+  .about-profile-content {
+    display: block;
   }
+  .about-profile-content .profile-picture {
+    margin-top: 0;
+    width: auto;
+    height: auto;
+    border-radius: 10px;
+  }
+  .about-profile-content .profile-picture img {
+    transform: none;
+    width: 100%;
+  }
+
   .hero .text-wrapper .title {
-    font-size: 36px;
+    font-size: 2.25rem;
     margin-top: 0;
     margin-bottom: 10px;
     color: #000;
   }
   .hero .text-wrapper .title span:last-child {
-    font-size: 28px;
+    font-size: 1.75rem;
   }
   .hero .text-wrapper .description {
-    font-size: 18px;
-    line-height: 28px;
+    font-size: 1.125rem;
+    line-height: 1.75rem;
   }
   .hero .text-wrapper li {
-    font-size: 18px;
+    font-size: 1.125rem;
   }
   .portfolio-wrapper .portfolio-item .portfolio-name {
-    font-size: 18px;
+    font-size: 1.125rem;
   }
   .mobile-only {
     display: initial;
