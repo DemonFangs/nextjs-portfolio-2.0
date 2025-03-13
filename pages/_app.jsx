@@ -1,6 +1,14 @@
 import '../styles/app.css';
 
-// This default export is required in a new `pages/_app.js` file.
+import Layout from '../components/Layout';
+import { GlobalProvider } from '../contexts/globalContext';
+
 export default function MyApp({ Component, pageProps }) {
-  return <Component {...pageProps} />
+  return (
+    <GlobalProvider>
+      <Layout>
+        <Component {...pageProps} />
+      </Layout>
+    </GlobalProvider>
+  );
 }

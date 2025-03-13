@@ -1,29 +1,40 @@
-import ImageBlock from './ImageBlock';
-
 const items = [
   {
     title: 'Mail me',
-    imgSrc: '/mail.png',
-    link: 'mailto:khadem.avinoor@gmail.com'
+    src: '/mail-icon.png',
+    external_link: 'mailto:khadem.avinoor@gmail.com'
   },
   {
     title: 'Github Page',
-    imgSrc: '/github.png',
-    link: 'https://github.com/DemonFangs'
+    src: '/github-icon.png',
+    external_link: 'https://github.com/DemonFangs'
   },
   {
     title: 'LinkedIn Page',
-    imgSrc:
-      'https://www.seekpng.com/png/full/154-1546943_jpg-transparent-stock-linkedin-logo-svg-png-icon.png',
-    link: 'https://www.linkedin.com/in/khadem-avinoor-alam/'
+    src: '/linkedin-icon.png',
+    external_link: 'https://www.linkedin.com/in/khadem-avinoor-alam/'
   }
 ];
 
-function Contact({ asBar = false }) {
+function Contact() {
   return (
-    <div className={`contact-wrapper ${asBar ? 'contact-bar' : ''}`}>
+    <div className={`contact-wrapper`}>
       <div className="pre-text">
-        <ImageBlock srcList={items} />
+        <div>Contact @</div>
+        <div className="image-block-wrapper ">
+          {items.map(({ title, src, external_link }, index) => (
+            <a
+              key={index}
+              className="image-block-item"
+              href={external_link}
+              title={title}
+              target="_blank"
+              rel="noreferrer"
+            >
+              <img src={src} alt={`${title} icon`} />
+            </a>
+          ))}
+        </div>
       </div>
     </div>
   );
