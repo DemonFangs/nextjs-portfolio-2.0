@@ -334,7 +334,7 @@ p.sub-point {
   background-color: #333;
 
   position: fixed;
-  bottom: 40px;
+  bottom: 60px;
   right: 40px;
 }
 .get-pdf:hover {
@@ -422,7 +422,7 @@ p.sub-point {
 
   .get-pdf {
     width: 60px;
-    bottom: 20px;
+    bottom: 50px;
     right: 20px;
   }
   .get-pdf img {
