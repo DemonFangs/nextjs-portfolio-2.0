@@ -325,6 +325,40 @@ p.sub-point {
   text-decoration: none;
 }
 
+.get-pdf {
+  display: flex;
+  align-items: center;
+  width: 100px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background-color: #333;
+
+  position: fixed;
+  bottom: 40px;
+  right: 40px;
+}
+.get-pdf:hover {
+  background-color: #2f2f2f;
+}
+.get-pdf > a {
+  display: block;
+  margin: auto;
+}
+.get-pdf img {
+  position: relative;
+  width: 60px;
+  filter: grayscale(1) invert(1);
+}
+.get-pdf:hover img {
+  filter: grayscale(1);
+}
+
+.footer {
+  padding: 20px 30px;
+  color: black;
+  text-align: center;
+}
+
 @media only screen and (max-width: 1024px) {
   :root {
     --body-padding: 50px;
@@ -334,7 +368,8 @@ p.sub-point {
     font-size: 1.125rem;
   }
 
-  .navbar {
+  .navbar,
+  .footer {
     padding: 10px 20px;
   }
   .navbar * {
@@ -383,5 +418,14 @@ p.sub-point {
   }
   .mobile-only {
     display: initial;
+  }
+
+  .get-pdf {
+    width: 60px;
+    bottom: 20px;
+    right: 20px;
+  }
+  .get-pdf img {
+    width: 40px;
   }
 }
