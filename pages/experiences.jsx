@@ -121,7 +121,7 @@ function Experiences() {
           <div className="text-wrapper w-full">
             <h1 className="title">
               <span>Junior Front-end Developer @ Fizzz Design Corp.</span>
-              <span>(November 2017 - January 2018)</span>
+              <span>(November 2017 - February 2019)</span>
             </h1>
             <p className="sub-point">
               Built web applications for clients from scratch or as per Graphics Designers specifications
