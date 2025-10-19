@@ -1,58 +1,126 @@
 import Head from 'next/head';
+import Link from 'next/link';
 
 import { useGlobalContext } from '../contexts/globalContext';
-
-const YEAR_DIVIDER = 31536000000;
+import Card from '../components/Card';
+import Highlight from '../components/Highlight';
+import Section from '../components/Section';
+import Summary from '../components/Summary';
+import TagList from '../components/TagList';
+import YearsExperience from '../components/YearsExperience';
 
 const Home = () => {
   const global_values = useGlobalContext();
-
-  const experience_time = global_values.range.reduce((total_time, current_range) => {
-    const start_time = (new Date(current_range[0])).getTime();
-    const end_time = (new Date(current_range[1])).getTime();
-    return (total_time + (end_time - start_time)); 
-  }, 31536000000)
-  const experience_time_years = experience_time / YEAR_DIVIDER;
-  const years_of_experience = Math.floor(experience_time_years);
-  const remaining_weeks_time = ((experience_time_years - years_of_experience) * 365) / 7;
-  const weeks = Math.floor(remaining_weeks_time);
-  const remaining_days = Math.floor((remaining_weeks_time - weeks) * 7);
   return (
     <>
       <Head>
         <title>Home</title>
       </Head>
 
-      <section className="hero">
-        <div className="container">
-          <div className="text-wrapper w-full">
-          <h1 className="title">Hello, I&apos;m Khadem Avinoor Alam</h1>
-            <div className="about-profile-content">
-              <div className="description">
-                <p className="sub-point">
-                  Welcome to my portfolio. I am a <span className="hl">software engineer</span> with{' '}
-                  <span
-                    className="hl"
-                    title={`${years_of_experience} years ${weeks} weeks and ${remaining_days} days`}>
-                    {years_of_experience}+ years
-                  </span>{' '}
-                  of experience, but I also like playing games, drink lots of tea and listen to music.
-                </p>
-                <p className="sub-point">
-                  An interest in Computer Programming led me to do a degree in Computer Science. It
-                  took much longer than most, with ups and downs during these seven years. But with
-                  persistence and perseverance through repeated failures have finally graduated. Let
-                  this be an example how failure is not an obstacle but an opportunity to get
-                  stronger.
-                </p>
-              </div>
-              <div className="profile-picture">
-                <img src="/profile_pic.jpg" alt="Khadem Avinoor Alam potrait" />
-              </div>
-            </div>
+      <Section title="Building digital experiences with persistence" className="hero">
+        <div className="background"></div>
+        <div className="description">
+          <p className="sub-point">
+            Software engineer of{' '}<YearsExperience />. I create elegant solutions,
+            drink lots of tea, and believe every failure is a step forward.
+          </p>
+          <p>
+            <Link className="btn-bg inline" href="/experiences">View my work</Link>
+            <Link className="btn-bg inline" href="#about-me">Learn more</Link>
+          </p>
+        </div>
+      </Section>
+      <Section title="Overview" className="summary">
+        <Summary items={[
+          { title: 'Years of Experience', value: '7+' },
+          { title: 'Project ownership', value: '6+' },
+          { title: 'Cups of Tea', value: '∞' },
+          { title: 'Timezone', value: 'EST' },
+          { title: 'Persistancy', value: '9000%' },
+        ]} />
+      </Section>
+      <Section title="About me" className="about-me" id="about-me">
+        <div className="about-profile-content">
+          <div className="description">
+            <p className="sub-point">
+              An interest in Computer Programming led me to pursue a degree in Computer Science. The 
+              journey took much longer than most, with ups and downs spanning seven years. But with 
+              persistence and perseverance through repeated failures, I finally graduated.
+            </p>
+            <p className="sub-point">
+              Let this be an example of how failure is not an obstacle but an opportunity to get 
+              stronger. Today, I channel that same determination into building robust software 
+              solutions and leading teams to success.
+            </p>
+            <TagList tags={[
+              'Full-Stack Development',
+              'Cloud Architecture',
+              'Team Leadership',
+              'Problem Solving',
+              'Agile Methodologies',
+            ]} />
+          </div>
+          <div className="profile-picture">
+            <img src="/profile_pic.jpg" alt="Khadem Avinoor Alam potrait" />
           </div>
         </div>
-      </section>
+      </Section>
+      <Section title="Highlights" className="featured-project">
+        <div className="cards-container">
+          <Card 
+            title="CI/CD pipeline"
+            link="/experiences#projects-ci-cd-pipeline"
+            icon="/ci-cd.png"
+            link_button
+          >
+            <p>
+              Built a CI/CD pipeline from concept to production, combining existing and new systems.
+            </p>
+          </Card>
+
+          <Card 
+            title="Inhouse MVC Framework"
+            link="/experiences#projects-mvc-framework"
+            link_button
+          >
+            <p>
+              Lead and developed an Model View Controller framework for an web app for both Customers
+              and inhouse DevOps.
+            </p>
+          </Card>
+
+          <Card 
+            title="Git-like diff in UI"
+            link="/experiences#projects-git-like-diff"
+            link_button
+          >
+            <p>
+              Built a <Highlight text="git" /> like UI to see any changes made after last deployment.
+            </p>
+          </Card>
+
+          <Card 
+            title="Google sheet-like features"
+            link="/experiences#projects-google-sheet-features"
+            link_button
+          >
+            <p>
+              Implemeted a google sheet like interaction in <Highlight text="Inhouse MVC" /> framework.
+            </p>
+          </Card>
+        </div>
+      </Section>
+      <Section title="Let's work together" className="lets-work-together text-center center-all">
+        <p>
+          Have a project in mind or just want to chat about tech over tea? I'm always open to new 
+          opportunities and conversations.
+        </p>
+        <p>
+          <Link className="btn-bg inline focus" href={`mailto:${global_values.email}`}>
+            Send me an email
+          </Link>
+        </p>
+      </Section>
     </>
   );
 };

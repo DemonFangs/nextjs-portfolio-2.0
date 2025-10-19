@@ -1,22 +1,5 @@
-const items = [
-  {
-    title: 'Mail me',
-    src: '/mail-icon.png',
-    external_link: 'mailto:khadem.avinoor@gmail.com'
-  },
-  {
-    title: 'Github Page',
-    src: '/github-icon.png',
-    external_link: 'https://github.com/DemonFangs'
-  },
-  {
-    title: 'LinkedIn Page',
-    src: '/linkedin-icon.png',
-    external_link: 'https://www.linkedin.com/in/khadem-avinoor-alam/'
-  }
-];
 
-function Contact() {
+function ContactForm() {
   return (
     <div className={`contact-wrapper`}>
       <div className="pre-text">
@@ -40,4 +23,4 @@ function Contact() {
   );
 }
 
-export default Contact;
+export default ContactForm;

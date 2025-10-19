@@ -1,14 +1,13 @@
 import Link from 'next/link';
 import { withRouter } from 'next/router';
 
-import Contact from './Contact';
-
 const NESTED_ACTIVE_CLASS = 'nested-active';
 
 function Navbar({ router }) {
   const navs = [
     { text: 'Home', href: '/' },
     { text: 'Experiences', href: '/experiences' },
+    { text: 'Contact', href: '/contact' },
   ];
 
   const isPath = (href, items = []) =>
@@ -21,8 +20,11 @@ function Navbar({ router }) {
     const nestedActiveClass = activeItem === NESTED_ACTIVE_CLASS ? NESTED_ACTIVE_CLASS : '';
 
     return (
-      <Link href={href}>
-        <a className={`nav-item ${activeClass} ${nestedActiveClass}`}>{text}</a>
+      <Link
+        className={`nav-item ${activeClass} ${nestedActiveClass}`}
+        href={href}
+      >
+        {text}
       </Link>
     );
   };
@@ -43,10 +45,8 @@ function Navbar({ router }) {
   return (
     <nav className="navbar">
       <div className="container">
-        <Link href="/">
-          <a className="logo">
-            Khadem A. Alam
-          </a>
+        <Link href="/" className="logo">
+          Khadem A. Alam
         </Link>
 
         <ul className="nav-links">
@@ -57,8 +57,18 @@ function Navbar({ router }) {
             </li>
           ))}
         </ul>
+        <div className="get-pdf">
+          <Link
+            className="btn-bg pdf-link" 
+            href="/Khadem-Avinoor-Alam-Resume.pdf"
+            title="Open resume PDF in new window"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Download resume
+          </Link>
+        </div>
       </div>
-      <Contact />
     </nav>
   );
 }

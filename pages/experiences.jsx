@@ -1,193 +1,300 @@
 import Head from 'next/head';
+import Link from 'next/link';
 
-import ExternalLink from '../components/ExternalLink';
+import ExperienceSummary from '../components/ExperinceSummary';
+import Highlight from '../components/Highlight';
 import TagList from '../components/TagList';
+import Section from '../components/Section';
+import { Segment, SubSegment } from '../components/Segment';
+import Summary from '../components/Summary';
+import { useGlobalContext } from '../contexts/globalContext';
+
+function ExpHeader({ title, company, date_range }) {
+  return (
+    <div className="exp-header">
+      <div className="header">
+        <h2>{title}</h2>
+        <div className="date-range">
+          <Highlight text={date_range} bg />
+        </div>
+      </div>
+      <div>{company}</div>
+    </div>
+  );
+};
+
+function ExpDetails({ title = '', children = [], id = '' }) {
+  return (
+    <div className="exp-details" id={id}>
+      <h3 className="header"><Highlight text={title} /></h3>
+      <div className="content">{children}</div>
+    </div>
+  );
+}
+
+function ExpFooter({ tags = [] }) {
+  return (
+    <div className="exp-footer">
+      <div>Technologies & skills</div>
+      <div><TagList tags={tags} /></div>
+    </div>
+  )
+};
 
 function Experiences() {
+  const global_values = useGlobalContext();
   return (
     <>
       <Head>
         <title>Experiences</title>
       </Head>
 
-      <section className="hero job-details" id="adbridg-inc">
-        <div className="container">
-          <div className="text-wrapper w-full">
-            <h1 className="title">
-              <span>Platform Engineer @ AdBridg</span>
-              <span>(January 2021 - April 2024)</span>
-            </h1>
-            <p className="sub-point">
-              <b>Optimized platform performance</b> by refactoring monolithic services into micro-services, improving
-              system performance by 4% and scalability by nearly 20%.
-            </p>
-            <p className="sub-point">
-              <b>Led migration efforts</b> for legacy features to Next.js from in-house framework by migrating old
-              features to the new framework and improving performance compared to legacy system by 10% including added
-              features.
-            </p>
-            <p className="sub-point">
-              <b>Developed and optimized scalable data aggregation pipelines</b> to process large datasets from
-              multiple sources, automating roll-ups and summarizing tasks for additional data points and breakpoints.
-              Updated aggregators to reduce processing time by nearly 3%, developed logging system ease of
-              debugging with notification for minimum manual intervention by a factor of 2, and improved data
-              reliability with error handling resulting in easy debugging and reduced confusions from users by 9%.
-            </p>
-            <p className="sub-point">
-              <b>Developed and managed CI/CD tools</b> by designing an in-house queuing system for Continuous
-              Deployment, reducing deployment errors significantly by nearly 30% and notify users with real-time
-              state-changes.
-            </p>
-            <p className="sub-point">
-              <b>Mentored new DevOps team members</b> on the internal application and back-end systems. Helped them
-              with on-boarding on all the internal systems and analytical tools.
-            </p>
-            <p className="sub-point">
-              <b>Develop new features and functionalities</b> for back-end APIs and other dependent applications.
-            </p>
-          </div>
-          <TagList
-            caption="Tech stack"
-            tags={['express', 'mysql', 'aws', 'dfp', 'pbd', 'boot', 'jira', 'conf', 'docker', 'next', 'd3', 'plot']}
+      <Section
+        className="hero w-full"
+        title="Driving innovation through engineering excellence"
+      >
+        <div className="background"></div>
+        <div className="description">
+          <Highlight text="7+" /> years of transforming complex challenges into scalable solutions. 
+          Specialized in platform engineering, microservices architecture, and team leadership.
+        </div>
+      </Section>
+      
+      <Section title="Overall impact" className="summary">
+        <Summary items={[
+          { title: 'Reduced deployment errors', value: '30%' },
+          { title: 'Improved scalability', value: '20%' },
+          { title: 'Increased productivity', value: '19%' },
+          { title: 'Enhanced compliance', value: '15%' },
+          { title: 'Client retention boost', value: '14%' },
+          { title: 'User engagement growth', value: '10%' },
+        ]} />
+      </Section>
+
+      <Section title="Professional Journey" className="experiences">
+        <Segment>
+          <ExpHeader
+            title="Platform Engineer"
+            company="AdBridg" 
+            date_range="January 2021 - April 2024"
           />
-        </div>
-      </section>
-      <hr className="break-section" />
-      <section className="hero job-details">
-        <div className="container">
-          <div className="text-wrapper w-full">
-            <h1 className="title">
-              <span>Full-stack Developer @ AdBridg</span>
-              <span>(February 2020 - January 2021)</span>
-            </h1>
-            <p className="sub-point">
-              <b>Enhanced web application functionality</b> by delivering new features for client-facing apps, allowing
-              users/publishers more options and nearly 10% increase in user engagement.
-            </p>
-            <p className="sub-point">
-              <b>Designed CI/CD pipeline</b> by integrating a versatile testing suite, redesigned existing pipeline
-              with at the time modern queuing system to reduce deployment time by 30%, improving team efficiency and
-              reducing production bugs
-            </p>
-            <p className="sub-point">
-              <b>Developed scraper tool</b> for scraping ads.txt from selected websites adhering to IAB guidelines and
-              cross-referencing them with SSPs sellers.json to confirm validity of entries on both sides, which
-              enhanced ad placement accuracy and compliance by 15%
-            </p>
-            <p className="sub-point">
-              <b>Mentored Junior Developer</b> on current and legacy systems. Trained them on efficient coding, good
-              code practices and testing methodologies.
-            </p>
-            <p className="sub-point">
-              <b>Developed multitudes of new features</b> for in-house application, leading to a increase in client
-              retention by 14% and nearly 19% increase in productivity for the Analytics team   
-            </p>
-            <p className="sub-point">
-              <b>Debugged distributed applications</b> reducing client-side and server-side errors through thorough
-              testing and optimization reducing errors during production by 20%.
-            </p>
-          </div>
-          <TagList
-            caption="Tech stack"
-            tags={['mysql', 'aws', 'pbd', 'jira', 'conf', 'docker', 'd3']}
+
+          <hr />
+
+          <ExpDetails title="Architecture & Performance">
+            <SubSegment>
+              Optimized platform performance by refactoring monolithic services into microservices,
+              improving system performance by<Highlight text="4%" />and scalability by
+              <Highlight text="20%" />
+            </SubSegment>
+            <SubSegment>
+              Led migration from legacy framework to Next.js, achieving<Highlight text="10%" /> 
+              performance improvement with enhanced features
+            </SubSegment>
+            <SubSegment>
+              Developed scalable data aggregation pipelines, reducing processing time by 
+              <Highlight text="3%" />and improving data reliability with<Highlight text="9%" /> 
+              reduction in user confusion
+            </SubSegment>
+          </ExpDetails>
+
+          <ExpDetails title="DevOps & CI/CD" id="ci-cd-pipeline">
+            <SubSegment>
+              Integrated the new <Highlight text="NextJS" /> system to the existing CI/CD pipeline,
+              
+            </SubSegment>
+            <SubSegment>
+              Redesigned CI/CD pipeline with modern testing suite, reducing deployment time by 
+              <Highlight text="30%" />and production bugs significantly
+            </SubSegment>
+            <SubSegment>
+              Developed logging system with automated notifications, reducing manual intervention by 
+              <Highlight text="50%" />
+            </SubSegment>
+          </ExpDetails>
+
+          <ExpDetails title="Client Impact & Leadership">
+            <SubSegment>
+              Enhanced web application with new features, increasing user engagement by 
+              <Highlight text="10%" />and client retention by<Highlight text="14%" />
+            </SubSegment>
+            <SubSegment>
+              Developed ads.txt scraper tool adhering to IAB guidelines, enhancing ad placement 
+              accuracy and compliance by<Highlight text="15%" />
+            </SubSegment>
+            <SubSegment>
+              Mentored DevOps team members and junior developers on internal systems, coding 
+              practices, and testing methodologies
+            </SubSegment>
+            <SubSegment>
+              Built in-house analytics tool using Plotly.js, enabling<Highlight text="20%" /> 
+              faster data-driven decisions
+            </SubSegment>
+            <SubSegment>
+              Increased Analytics team productivity by<Highlight text="19%" />through development 
+              of multiple in-house application features
+            </SubSegment>
+          </ExpDetails>
+
+          <ExpDetails title="Development & Quality">
+            <SubSegment>
+              Debugged distributed applications, reducing production errors by 
+              <Highlight text="20%" />through thorough testing and optimization
+            </SubSegment>
+            <SubSegment>
+              Spearheaded client-facing application development using custom in-house framework, 
+              improving client satisfaction and usability
+            </SubSegment>
+          </ExpDetails>
+
+          <hr />
+
+          <ExpFooter tags={[
+            'Microservices',
+            'Next.js',
+            'CI/CD',
+            'Data Pipelines',
+            'DevOps',
+            'Testing',
+            'Mentorship',
+            'Full-Stack',
+            'Git versioning strategy'
+          ]} />
+        </Segment>
+        {/* Platform Engineear */}
+
+        <Segment>
+          <ExpHeader
+            title="Intermediate Full-stack developer"
+            company="AdBridg" 
+            date_range="February 2020 - January 2021"
           />
-        </div>
-      </section>
-      <hr className="break-section" />
-      <section className="hero job-details">
-        <div className="container">
-          <div className="text-wrapper w-full">
-            <h1 className="title">
-              <span>Junior Developer @ AdBridg</span>
-              <span>(February 2019 - February 2020)</span>
-            </h1>
-            <p className="sub-point">
-              <b>Spearheaded client-facing application development</b>: Built and launched a new front-end client 
-              application using a custom in-house framework, improving client satisfaction and usability.
-            </p>
-            <p className="sub-point">
-              <b>Developed in-house analytics tool</b> for data visualization using Plotly.js, enabling stakeholders to
-              make data-driven decisions 20% faster.
-            </p>
-          </div>
-          <TagList caption="Tech stack" tags={['mysql', 'aws', 'jira', 'conf', 'docker']} />
-        </div>
-      </section>
 
-      <hr className="break-section double" />
+          <hr />
 
-      <section className="hero" id="fizzz-design-corp">
-        <div className="container">
-          <div className="text-wrapper w-full">
-            <h1 className="title">
-              <span>Junior Front-end Developer @ Fizzz Design Corp.</span>
-              <span>(November 2017 - February 2019)</span>
-            </h1>
-            <p className="sub-point">
-              Built web applications for clients from scratch or as per Graphics Designers specifications
-            </p>
-            <p className="sub-point">
-              Built, static, both single page and multiple-page applications with whichever framework best suits the
-              clients needs.
-            </p>
-            <p className="sub-point">
-              Developed both front end and back end web applications.
-            </p>
-            <p className="sub-point">
-              Integrated data structures to generate dynamic web pages.
-            </p>
-            <p className="sub-point">
-              Implemented more accessible web pages.
-            </p>
+          <ExpDetails title="Architecture & Performance">
+            <SubSegment>
+              Optimized platform performance by refactoring monolithic services into microservices,
+              improving system performance by<Highlight text="4%" />and scalability by
+              <Highlight text="20%" />
+            </SubSegment>
+            <SubSegment>
+              Led migration from legacy framework to Next.js, achieving<Highlight text="10%" /> 
+              performance improvement with enhanced features
+            </SubSegment>
+            <SubSegment>
+              Developed scalable data aggregation pipelines, reducing processing time by 
+              <Highlight text="3%" />and improving data reliability with<Highlight text="9%" /> 
+              reduction in user confusion
+            </SubSegment>
+          </ExpDetails>
 
-            <hr className="short" />
-            <h3>
-              <ExternalLink href="http://www.fizzz.com" text="Fizzz Design Corp. Official webpage" />
-            </h3>
-            <p className="sub-point">
-              Developed, updated, maintained and deployed the web page according to the mock-up provided by the
-              graphic designer.
-            </p>
+          <ExpDetails title="DevOps & CI/CD" id="ci-cd-pipeline">
+            <SubSegment>
+              Designed in-house queuing system for Continuous Deployment, reducing deployment errors 
+              by<Highlight text="30%" />with real-time notifications
+            </SubSegment>
+            <SubSegment>
+              Redesigned CI/CD pipeline with modern testing suite, reducing deployment time by 
+              <Highlight text="30%" />and production bugs significantly
+            </SubSegment>
+            <SubSegment>
+              Developed logging system with automated notifications, reducing manual intervention by 
+              <Highlight text="50%" />
+            </SubSegment>
+          </ExpDetails>
 
-            <hr className="short" />
-            <h3>
-              <ExternalLink
-                href="http://web.archive.org/web/20190929015820/http://www.oico.on.ca/ar/2017-2018/"
-                text="Office of Integrity Commissioner of Ontario Annual Report 2017 to 2018 webpage"
-              />
-            </h3>
-            <p className="sub-point">
-              Developing a web page according to the mock-up provided by graphic designer
-            </p>
-            <p className="sub-point">
-              Making sure the web page is AODA compliant and passes all WCAG 2.0 tests
-            </p>
-          </div>
-          {TagList({
-            caption: 'Tech stack',
-            tags: [
-              'angular',
-              'firebase',
-              'jquery',
-              'nosql',
-              'typescript',
-              'boot'
-            ]
-          })}
-        </div>
-      </section>
+          <ExpDetails title="Client Impact & Leadership">
+            <SubSegment>
+              Enhanced web application with new features, increasing user engagement by 
+              <Highlight text="10%" />and client retention by<Highlight text="14%" />
+            </SubSegment>
+            <SubSegment>
+              Developed ads.txt scraper tool adhering to IAB guidelines, enhancing ad placement 
+              accuracy and compliance by<Highlight text="15%" />
+            </SubSegment>
+            <SubSegment>
+              Mentored DevOps team members and junior developers on internal systems, coding 
+              practices, and testing methodologies
+            </SubSegment>
+            <SubSegment>
+              Built in-house analytics tool using Plotly.js, enabling<Highlight text="20%" /> 
+              faster data-driven decisions
+            </SubSegment>
+            <SubSegment>
+              Increased Analytics team productivity by<Highlight text="19%" />through development 
+              of multiple in-house application features
+            </SubSegment>
+          </ExpDetails>
 
-      <hr className="break-section double" />
+          <ExpDetails title="Development & Quality">
+            <SubSegment>
+              Debugged distributed applications, reducing production errors by 
+              <Highlight text="20%" />through thorough testing and optimization
+            </SubSegment>
+            <SubSegment>
+              Spearheaded client-facing application development using custom in-house framework, 
+              improving client satisfaction and usability
+            </SubSegment>
+          </ExpDetails>
 
-      <section className="hero job-details">
-        <div className="container">
-          <div className="text-wrapper w-full">
-            <h2>Common Tech stack:</h2>
-            <p className="sub-point">With over 7+ years of experience</p>
-            <TagList tags={['shell', 'linux', 'vscode', 'js', 'node', 'html', 'css', 'express', 'react']} />
-          </div>
-        </div>
-      </section>
+          <hr />
+
+          <ExpFooter tags={[
+            'Microservices',
+            'Next.js',
+            'CI/CD',
+            'Data Pipelines',
+            'DevOps',
+            'Testing',
+            'Mentorship',
+            'Full-Stack',
+            'Git versioning strategy'
+          ]} />
+        </Segment>
+      </Section>
+      
+      <Section title="Experience in Years" className="summary">
+        <ExperienceSummary items={[
+          { 
+            title: '7+',
+            values: [
+              'NodeJS',
+              'ExpressJS',
+              'HTML5',
+              'VanillaJS',
+              'CSS/SCSS',
+              'TypeScript',
+              'ExpressJS',
+              'git',
+            ] 
+          },
+          {
+            title: '6+',
+            values: []
+          },
+          {
+            title: '5+',
+            values: []
+          },
+          {
+            title: '4+',
+            values: []
+          },
+          {
+            title: '3+',
+            values: []
+          },
+          {
+            title: '2+',
+            values: []
+          },
+          {
+            title: 'Other',
+            values: []
+          },
+        ]} />
+      </Section>
     </>
   );
 }

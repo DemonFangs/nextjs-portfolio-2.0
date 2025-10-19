@@ -1,0 +1,104 @@
+.navbar {
+  padding: 20px 30px;
+  display: flex;
+  background-color: rgba(0, 0, 0);
+  border-radius: 20px;
+  border: 1px solid white;
+  border-radius: 0;
+  border: 0;
+  z-index: 1;
+
+  position: sticky;
+  top: 0;
+
+  * {
+    position: relative;
+  }
+  .container {
+    display: flex;
+    align-items: center;
+    height: 70px;
+    width: 100%;
+    max-width: 1200px;
+    margin-inline: auto;
+  }
+  .logo {
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-weight: 600;
+    color: var(--main-text-color);
+    text-decoration: none;
+  }
+  .nav-links {
+    display: flex;
+    list-style: none;
+  }
+  .nav-item {
+    position: relative;
+    display: inline-block;
+    margin-left: 20px;
+    margin-right: 20px;
+    text-decoration: none;
+    transition: opacity 0.3s;
+  }
+  .nav-item.active {
+    font-weight: 700;
+  }
+  .nav-item.active:after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 25px;
+    height: 2px;
+    background-color: var(--btn-bg);
+  }
+  li:hover .nav-item.nested-active.active:after {
+    opacity: 0;
+  }
+  li:hover .nested-nav .nav-item.active:after {
+    bottom: -3px;
+  }
+  .nav-item:hover {
+    opacity: 0.5;
+  }
+  li .nested-nav {
+    display: block;
+    height: 0;
+    position: absolute;
+    left: 0;
+    overflow: hidden;
+    width: 200px;
+  }
+  li:hover .nested-nav {
+    height: auto;
+    padding: 10px 10px 10px 0;
+  }
+  li .nested-nav ul {
+    padding: 0;
+  }
+  li .nested-nav ul li:not(:first-child) {
+    padding-top: 10px;
+  }
+
+  .get-pdf {
+    display: flex;
+    align-items: center;
+    font-size: var(--text-size-sm);
+    width: fit-content;
+    margin-left: auto;
+  }
+
+  @media only screen and (max-width: 1024px) {
+    & {
+      padding: 10px 20px;
+    }
+    * {
+      font-size: 1rem;
+    }
+    .logo {
+      font-size: 1.2rem;
+    }
+  }
+}
