@@ -249,10 +249,6 @@ hr {
   .sub-segment {
     font-size: var(--text-size-sm);
     color: var(--second-text-color);
-
-    .highlight {
-      margin-inline: 5px;
-    }
   }
 
   .exp-footer {
@@ -415,6 +411,7 @@ hr {
     color: var(--btn-text-color);
   }
   &:hover {
+    cursor: pointer;
     transform: translateY(-2px);
     box-shadow: 0 8px 24px rgba(255, 255, 255, 0.2);
   }
@@ -513,6 +510,37 @@ p.sub-point {
       text-decoration: none;
     }
   }
+}
+
+.panel-container {
+  --gap-pad: 20px;
+
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-pad);
+
+  .navigation {
+    .btn-bg {
+      font-size: var(--text-size-sm);
+    }
+  }
+
+  .content#experience-views {
+    & > div {
+      display: none;
+
+      &.show {
+        display: flex;
+        flex-direction: column;
+        gap: var(--gap-pad);
+      }
+    }
+
+    .summary-item:hover {
+      transform: translateX(8px);
+    }
+  }
+
 }
 
 .footer {

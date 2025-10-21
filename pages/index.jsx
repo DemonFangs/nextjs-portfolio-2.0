@@ -95,7 +95,7 @@ const Home = () => {
             link_button
           >
             <p>
-              Built a <Highlight text="git" /> like UI to see any changes made after last deployment.
+              Built a <Highlight text="git" /> like UI for reviewing changes between deployments.
             </p>
           </Card>
 
