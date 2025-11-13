@@ -5,11 +5,20 @@ import Link from 'next/link';
  * @param {object} props Set of attributes for summary 
  * @param {string} props.title Card title
  * @param {string} props.icon Card icon or picture
+ * @param {boolean} props.text_as_icon Transforms the passed icon text as an icon
  * @param {boolean} props.no_bg The icon segment is not rendered
  */
-function IconContainer({ title = '', icon = '', no_bg = false }) {
+function IconContainer({ title = '', icon = '', text_as_icon = false, no_bg = false }) {
   let icon_dom = (<></>);
-  if (icon) {
+
+  if (text_as_icon) {
+    icon_dom = (
+      <div className="icon">{
+        icon.split('')
+          .map((letter, index) => (<span key={`icon-letter-${index}`}>{letter}</span>))
+      }</div>
+    );
+  } else if (icon) {
     icon_dom = (
       <img className="icon" src={icon} alt={`${title} icon`} />
     );
@@ -17,6 +26,7 @@ function IconContainer({ title = '', icon = '', no_bg = false }) {
 
   const class_names = [
       'icon-container',
+      text_as_icon ? 'text-as-icon' : '',
       no_bg ? 'no-bg' : '',
     ]
     .filter(Boolean)
@@ -55,6 +65,7 @@ function ButtonContainer({ link = '', link_button = false }) {
  * @param {string} props.link Card link
  * @param {boolean} props.link_button Creates a link button instead of using the
  * entire card as the link
+ * @param {boolean} props.text_as_icon Transforms the passed icon text as an icon
  * @param {boolean} props.no_bg The icon segment is not rendered
  */
 function Card({ 
@@ -63,14 +74,15 @@ function Card({
   title = '', 
   children = [], 
   link = '', 
+  text_as_icon = '',
   link_button = false,
   no_bg = false
 }) {
   const card = (
     <div className={`card ${className}`}>
-      <IconContainer icon={icon} title={title} no_bg={no_bg} />
-      <h3 className="heading">{title}</h3>
-      <div className="description">
+      <IconContainer icon={icon} title={title} no_bg={no_bg} text_as_icon={text_as_icon} />
+      {title ? <h3 className="heading">{title}</h3> : <></>}
+      <div className={`description ${title ? '' : 'no-title'}`}>
         {children}
       </div>
       <ButtonContainer link={link} link_button={link_button} />

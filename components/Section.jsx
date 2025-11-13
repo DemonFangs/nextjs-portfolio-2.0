@@ -1,3 +1,5 @@
+import DecoratedText from './DecorateText';
+
 /**
  * Generate a list of summaries
  * @param {object} props Set of attributes for Section 
@@ -11,7 +13,9 @@ function Section({ children = [], title = '', className = '', id = '' }) {
     <section className={`top ${className}`} id={id}>
       <div className="container">
         <div className="text-wrapper w-full">
-          <h2 className="title">{title}</h2>
+          <h2 className="title">
+            <DecoratedText text={title} />
+          </h2>
           <>
             {children}
           </>

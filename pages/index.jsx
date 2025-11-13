@@ -3,6 +3,7 @@ import Link from 'next/link';
 
 import { useGlobalContext } from '../contexts/globalContext';
 import Card from '../components/Card';
+import DecoratedText from '../components/DecorateText';
 import Highlight from '../components/Highlight';
 import Section from '../components/Section';
 import Summary from '../components/Summary';
@@ -17,7 +18,10 @@ const Home = () => {
         <title>Home</title>
       </Head>
 
-      <Section title="Building digital experiences with persistence" className="hero">
+      <Section
+        className="hero"
+        title={`Building digital "experiences" with persistence`}
+      >
         <div className="background"></div>
         <div className="description">
           <p className="sub-point">
@@ -48,9 +52,11 @@ const Home = () => {
               persistence and perseverance through repeated failures, I finally graduated.
             </p>
             <p className="sub-point">
-              Let this be an example of how failure is not an obstacle but an opportunity to get 
-              stronger. Today, I channel that same determination into building robust software 
-              solutions and leading teams to success.
+              <DecoratedText text={[
+                `Let this be an example of how "failure is not an obstacle but an opportunity to get`,
+                `stronger". Today, I channel that same determination into building robust "software`,
+                `solutions" and "leading teams" to success.`
+              ].join(' ')} />
             </p>
             <TagList tags={[
               'Full-Stack Development',
@@ -61,37 +67,42 @@ const Home = () => {
             ]} />
           </div>
           <div className="profile-picture">
-            <img src="/profile_pic.jpg" alt="Khadem Avinoor Alam potrait" />
+            {/* <img src="/profile_pic.jpg" alt="Khadem Avinoor Alam potrait" /> */}
+            <div className="background profile-pic"></div>
           </div>
         </div>
       </Section>
       <Section title="Highlights" className="featured-project">
         <div className="cards-container">
           <Card 
+            title="Custom MVC Framework"
+            icon="MVC"
+            text_as_icon
+            link="/projects#custom-mvc"
+            link_button
+          >
+            <p>
+              Lead and developed an <Highlight text="Model View Controller" /> framework 
+              for an web app for both Customers and inhouse DevOps.
+            </p>
+          </Card>
+
+          <Card 
             title="CI/CD pipeline"
-            link="/experiences#projects-ci-cd-pipeline"
+            link="/projects/#ci-cd-pipeline"
             icon="/ci-cd.png"
             link_button
           >
             <p>
-              Built a CI/CD pipeline from concept to production, combining existing and new systems.
+              Built a <Highlight text="CI/CD pipeline" /> from concept to production, 
+              combining existing and new systems.
             </p>
           </Card>
 
-          <Card 
-            title="Inhouse MVC Framework"
-            link="/experiences#projects-mvc-framework"
-            link_button
-          >
-            <p>
-              Lead and developed an Model View Controller framework for an web app for both Customers
-              and inhouse DevOps.
-            </p>
-          </Card>
-
-          <Card 
-            title="Git-like diff in UI"
-            link="/experiences#projects-git-like-diff"
+          <Card
+            title="Change Visualization UI"
+            icon="/github-icon.png"
+            link="/projects/#git-like-diff"
             link_button
           >
             <p>
@@ -99,13 +110,14 @@ const Home = () => {
             </p>
           </Card>
 
-          <Card 
-            title="Google sheet-like features"
-            link="/experiences#projects-google-sheet-features"
+          <Card
+            title="Spreadsheet-Style Editor"
+            icon="/table.png"
+            link="/projects/#google-sheet-features"
             link_button
           >
             <p>
-              Implemeted a google sheet like interaction in <Highlight text="Inhouse MVC" /> framework.
+              Implemeted a google sheet like user experience in <Highlight text="Custom MVC" /> framework.
             </p>
           </Card>
         </div>

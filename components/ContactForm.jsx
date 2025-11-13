@@ -7,7 +7,7 @@ function ContactForm() {
         <div className="image-block-wrapper ">
           {items.map(({ title, src, external_link }, index) => (
             <a
-              key={index}
+              key={`contact-form-section-${index}`}
               className="image-block-item"
               href={external_link}
               title={title}

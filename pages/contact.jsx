@@ -28,9 +28,8 @@ function Contact() {
       </Section>
       
       <Section title="Find me at" className="summary">
-        <div className="cards-container">
-          <Card 
-            className="card-sm" 
+        <div className="cards-container small-cards">
+          <Card
             title="Email"
             icon='/mail-icon.png'
           >
@@ -46,7 +45,6 @@ function Contact() {
             </Link>
           </Card>
           <Card
-            className="card-sm"
             title="LinkedIn"
             icon='/linkedin-icon.png'
           >
@@ -62,7 +60,6 @@ function Contact() {
             </Link>
           </Card>
           <Card
-            className="card-sm"
             title="Github"
             icon='/github-icon.png'
           >

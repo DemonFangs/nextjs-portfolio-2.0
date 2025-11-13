@@ -16,7 +16,7 @@ function Summary({ items = [] }) {
       {items.map((item, index) => {
         const { title = '', value = '' } = item || {};
         return (
-          <div key={index} className="summary-item">
+          <div key={`summary-child-${index}`} className="summary-item">
             <div>{value}</div>
             <div>{title}</div>
           </div>

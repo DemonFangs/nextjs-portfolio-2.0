@@ -7,6 +7,7 @@ function Navbar({ router }) {
   const navs = [
     { text: 'Home', href: '/' },
     { text: 'Experiences', href: '/experiences' },
+    { text: 'Projects', href: '/projects' },
     { text: 'Contact', href: '/contact' },
   ];
 
@@ -35,7 +36,7 @@ function Navbar({ router }) {
       <div className="nested-nav">
         <ul>
           {items.map((item, index) => (
-            <li key={index}>{getLink(item)}</li>
+            <li key={`nested-nav-item-${index}`} tabIndex={-1}>{getLink(item)}</li>
           ))}
         </ul>
       </div>
@@ -46,12 +47,16 @@ function Navbar({ router }) {
     <nav className="navbar">
       <div className="container">
         <Link href="/" className="logo">
-          Khadem A. Alam
+          <span className="sm-screen">K</span>
+          <span className="md-screen">hadem</span>{' '}
+          <span className="full">A.</span>{' '}
+          <span className="sm-screen">A</span>
+          <span className="md-screen">lam</span>
         </Link>
 
         <ul className="nav-links">
           {navs.map((nav, index) => (
-            <li key={index}>
+            <li key={`nav-item-${index}`}>
               <>{getLink(nav)}</>
               <>{renderNested(nav)}</>
             </li>
