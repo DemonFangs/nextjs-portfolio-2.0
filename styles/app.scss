@@ -340,6 +340,10 @@ hr {
     text-decoration: none;
     align-items: center;
 
+    @media (max-width: 1024px) {
+      padding: calc(var(--global-gap) * 0.25);
+    }
+
     span:last-child {
       margin-left: auto;
     }

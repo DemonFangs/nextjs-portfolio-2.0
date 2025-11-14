@@ -1,7 +1,8 @@
 import Head from 'next/head';
 
-import Section from '../components/Section';
 import Card from '../components/Card';
+import DecoratedText from '../components/DecorateText';
+import Section from '../components/Section';
 import { Segment, SubSegment, SegmentHeader, SegmentContent, SegmentFooter } from '../components/Segment';
 import TagList from '../components/TagList';
 
@@ -53,9 +54,11 @@ function Projects() {
       >
         <div className="background"></div>
         <div className="description">
-          Every project represents countless hours of learning, iteration, and 
-          {' '}growth — transforming obstacles into opportunities 
-          through "persistent effort".
+          <DecoratedText text={[
+            'Every project represents countless hours of learning, iteration, and',
+            'growth — transforming obstacles into opportunities',
+            'through "persistent effort".'
+          ].join(' ')} />
         </div>
       </Section>
       
@@ -72,31 +75,74 @@ function Projects() {
               'TypeScript',
               'ExpressJS',
               'Git',
+              'Documentation',
+              'Team Player',
+              'Project Owner',
+              'XML',
+              'Project Owner',
+              'Bash',
+              'Linux'
             ] 
           },
           {
             title: '6+',
-            values: []
+            values: [
+              'Design Architect',
+              'Advertisement Technology (AdTech)',
+              'REST',
+              'Agile Development',
+              'Jira',
+              'Confluence',
+              'CI/CD Pipeline',
+              'SQL/MySQL',
+              'Docker',
+            ]
           },
           {
             title: '5+',
-            values: []
+            values: [
+              'Database Design',
+              'Google Ad Manager (GAM)',
+              'Doubleclick for Publisher (DFP)',
+              'Prebid.js',
+              'Team Leader',
+              'Plotly.js',
+              'Aurora (AWS)',
+            ]
           },
           {
             title: '4+',
-            values: []
+            values: [
+              'EC2 (AWS)',
+              'S3 (AWS)',
+              'CloudFront (AWS)',
+              'Concurrent Projects',
+            ]
           },
           {
             title: '3+',
-            values: []
+            values: [
+              'NextJS',
+              'D3.js',
+            ]
           },
           {
             title: '2+',
-            values: []
+            values: [
+              'WCAG 2.0 Compliant Design',
+              'Angular JS / Angular 2.0',
+            ]
           },
           {
             title: '<2',
-            values: []
+            values: [
+              'Go Lang',
+              'Lambda (AWS)',
+              'AppScript (Google)',
+              'Firebase',
+              'NoSQL',
+              'Heroku'
+            ]
           },
         ]} />
       </Section>
@@ -109,7 +155,7 @@ function Projects() {
             <SegmentHeader
               title="Custom MVC"
               sub_text="AdBridg" 
-              highlight="Owned - 2020 to 2024"
+              highlight="Owned — 2020 to 2024"
             />
 
             <hr />
@@ -164,6 +210,14 @@ function Projects() {
 
             <SegmentContent title="Challanges">
               <SubSegment>
+                Single-developer ownership slowed maintenance and debugging as issues had to be addressed 
+                between other projects, delaying resolution while developing "stronger multi-project 
+                management skills".
+              </SubSegment>
+              <SubSegment>
+                Creating components from scratch allowed precise customization but required significant 
+                testing investment and accumulated technical debt as the application grew and components 
+                became more feature-heavy.
               </SubSegment>
             </SegmentContent>
 
@@ -176,6 +230,7 @@ function Projects() {
               'JavaScript',
               'Git',
               'Plotly.js',
+              'Concurrent Projects',
             ]} />
           </Segment>
 
@@ -184,7 +239,7 @@ function Projects() {
             <SegmentHeader
               title="CI/CD Pipeline"
               sub_text="AdBridg" 
-              highlight="Owned - 2020 to 2024"
+              highlight="Owned — 2020 to 2024"
             />
 
             <hr />
@@ -283,7 +338,7 @@ function Projects() {
             <SegmentHeader
               title="Optimized Data Aggregation Engine"
               sub_text="AdBridg"
-              highlight="Refactored - 2022"
+              highlight="Refactored — 2022"
             />
 
             <hr />
@@ -316,6 +371,7 @@ function Projects() {
               'Redis',
               'Database Design',
               'MySQL',
+              'Concurrent Projects',
             ]} />
           </Segment>
 
@@ -324,7 +380,7 @@ function Projects() {
             <SegmentHeader
               title="Ads.txt Validator"
               sub_text="AdBridg"
-              highlight="Owned - 2022 to 2023"
+              highlight="Owned — 2022 to 2023"
             />
 
             <hr />
@@ -377,16 +433,40 @@ function Projects() {
             <SegmentHeader
               title="Change Visualization UI"
               sub_text="AdBridg"
-              highlight="Owned - 2020 to 2024"
+              highlight="Owned — 2020 to 2024"
             />
 
             <hr />
             
             <SegmentContent title="Design Concept">
               <SubSegment>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam at repudiandae 
-                quaerat iste quas voluptatem, commodi rerum perferendis alias sunt doloribus rem 
-                nesciunt nihil dicta dolorum unde quasi ut quibusdam!
+                Develop a visual change tracking system that enables users to quickly identify 
+                and understand modifications across the application. The interface provides clear 
+                visual indicators for three change types — additions, deletions, and edits — with 
+                contextual references linking each change to its specific location within the 
+                application. 
+              </SubSegment>
+              <SubSegment>
+                Modeled the visualization pattern after "Git's diff" functionality to leverage 
+                familiar developer paradigms and easy recognition.
+              </SubSegment>
+            </SegmentContent>
+            
+            <SegmentContent title="Implementation">
+              <SubSegment>
+                Created a summary dashboard displaying total change count with categorical 
+                breakdowns for each change type.
+              </SubSegment>
+              <SubSegment>
+                Implemented a color-coded change visualization using "Git diff"'s standard color 
+                scheme — green for additions, red for deletions, yellow for modifications — to 
+                ensure immediate visual comprehension.
+              </SubSegment>
+              <SubSegment>
+                Each change entry features an expandable detail panel that presents side-by-side 
+                comparisons between the current undeployed and previous deployed versions, 
+                accompanied by direct navigation links to the modified application sections for 
+                contextual review.
               </SubSegment>
             </SegmentContent>
 
@@ -396,6 +476,78 @@ function Projects() {
               'JavaScript',
               'Git',
               'Model View Controller (MVC)',
+              'Visualisation',
+            ]} />
+          </Segment>
+
+          {/* ------- Google Sheets API Integration ---------- */}
+          <Segment id="google-sheet-api-integration">
+            <SegmentHeader
+              title="Google Sheets API Integration"
+              sub_text="AdBridg"
+              highlight="Owned — 2022 to 2024"
+            />
+
+            <hr />
+            
+            <SegmentContent title="Design Concept">
+              <SubSegment>
+                Design a Google Sheets integration that bridges the existing API with a familiar 
+                spreadsheet interface, enabling non-technical users to manage publisher line 
+                items without direct database access
+              </SubSegment>
+              <SubSegment>
+                The system should be able to validate data entries in real-time by querying the 
+                database for reference data such as publisher IDs, campaign details, or other 
+                relational information.
+              </SubSegment>
+              <SubSegment>
+                Users should be able to perform standard CRUD operations (create, read, update, 
+                delete) within the spreadsheet, with visual color-coding mirroring the "Git diff" 
+                pattern — green for additions, yellow for modifications, and red for deletions — 
+                providing immediate feedback on pending changes before database commits.
+              </SubSegment>
+            </SegmentContent>
+            
+            <SegmentContent title="Implementation">
+              <SubSegment>
+                Implemented a security layer by designating the first sheet as an authentication 
+                gateway, requiring users to log in before accessing line item data. Upon successful 
+                authentication, users select a specific deployment environment to work within, 
+                ensuring changes are isolated to the appropriate context.
+              </SubSegment>
+              <SubSegment>
+                To accommodate "Google AppsScript"'s API rate limits in the free tier (which 
+                restricts daily outgoing requests), replaced auto-fill on paste with a manual 
+                trigger button. This design decision significantly reduced API calls, preventing 
+                quota exhaustion while maintaining functionality. The button-triggered approach 
+                batches validation, optimizing API usage while preserving data integrity.
+              </SubSegment>
+            </SegmentContent>
+            
+            <SegmentContent title="Challanges">
+              <SubSegment>
+                Initial real-time validation proved inefficient as each row change triggered 
+                individual API requests, creating performance bottlenecks and slow user experience. 
+                Migrated "validation logic" to operate at the page level with validation checks 
+                performed locally within "AppsScript" rather than making additional API requests.
+              </SubSegment>
+              <SubSegment>
+                The "validation architectural" shift eliminated redundant API calls by caching 
+                reference data locally, reduced server load, improved response times dramatically, 
+                and provided a smoother user experience while staying within Apps Script's request 
+                limitations.
+              </SubSegment>
+            </SegmentContent>
+
+            <hr />
+
+            <SegmentFooter tags={[
+              'JavaScript',
+              'AppScript (Google)',
+              'Google Spreadsheet',
+              'Data Validation',
+              'Validation Schema',
             ]} />
           </Segment>
 
@@ -404,16 +556,45 @@ function Projects() {
             <SegmentHeader
               title="Spreadsheet-Style Editor"
               sub_text="AdBridg"
-              highlight="Owned - 2020 to 2024"
+              highlight="Owned — 2020 to 2024"
             />
 
             <hr />
             
             <SegmentContent title="Design Concept">
               <SubSegment>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam at repudiandae 
-                quaerat iste quas voluptatem, commodi rerum perferendis alias sunt doloribus rem 
-                nesciunt nihil dicta dolorum unde quasi ut quibusdam!
+                Designed an interactive spreadsheet-style table interface with seamless toggling 
+                between view and edit modes, enabling users to work efficiently without leaving 
+                the table context.
+              </SubSegment>
+              <SubSegment>
+                Implemented keyboard navigation patterns familiar to spreadsheet users: `Enter` 
+                and `Shift+Enter` for vertical row navigation, and `Tab` and `Shift+Tab` for 
+                horizontal cell traversal, ensuring a fluid, mouse-free workflow for power users 
+                accustomed to traditional spreadsheet applications.
+              </SubSegment>
+            </SegmentContent>
+
+            <SegmentContent title="Implementation">
+              <SubSegment>
+                Developed a modular, reusable table component that replicates spreadsheet 
+                functionality with bidirectional state management for view and edit modes.
+              </SubSegment>
+              <SubSegment>
+                Integrated intelligent column sorting that responds to header interactions, 
+                automatically toggling between ascending and descending order based on user 
+                clicks — mirroring pivot table behavior for intuitive data organization.
+              </SubSegment>
+              <SubSegment>
+                Built a robust multi-row selection system with context-sensitive action menus, 
+                allowing bulk operations tailored to each table's specific use case.
+              </SubSegment>
+              <SubSegment>
+                Engineered a comprehensive cell type library supporting diverse input formats 
+                including JSON objects, radio buttons, single-select dropdowns, multi-select 
+                dropdowns, date pickers, number inputs, rich text editors, and custom validators, 
+                providing flexibility to handle virtually any data structure or user input 
+                requirement.
               </SubSegment>
             </SegmentContent>
 

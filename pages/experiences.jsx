@@ -44,7 +44,7 @@ function Experiences() {
             <SegmentHeader
               title="Platform Engineer"
               sub_text="AdBridg" 
-              highlight="January 2021 - April 2024"
+              highlight="January 2021 — April 2024"
             />
 
             <hr />
@@ -131,25 +131,30 @@ function Experiences() {
             <SegmentHeader
               title="Intermediate Full-stack developer"
               sub_text="AdBridg" 
-              highlight="February 2020 - January 2021"
+              highlight="February 2020 — January 2021"
             />
 
             <hr />
 
-            <SegmentContent title="Architecture & Performance">
+            <SegmentContent title="Design & Architecture">
               <SubSegment>
-                Optimized platform performance by refactoring monolithic services into microservices,
-                improving system performance by "4%" and scalability by
-                 "20%" 
+                ???
               </SubSegment>
               <SubSegment>
-                Led migration from legacy framework to Next.js, achieving "10%"  
-                performance improvement with enhanced features
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Amet perspiciatis et, tenetur sit 
+                facilis quisquam repellendus doloribus quod exercitationem optio maxime repellat veniam 
+                aliquam tempore autem beatae, reprehenderit quis sequi!
+              </SubSegment>
+            </SegmentContent>
+
+            <SegmentContent title="Leadership & Training">
+              <SubSegment>
+                ???
               </SubSegment>
               <SubSegment>
-                Developed scalable data aggregation pipelines, reducing processing time by 
-                 "3%" and improving data reliability with "9%"  
-                reduction in user confusion
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Amet perspiciatis et, tenetur sit 
+                facilis quisquam repellendus doloribus quod exercitationem optio maxime repellat veniam 
+                aliquam tempore autem beatae, reprehenderit quis sequi!
               </SubSegment>
             </SegmentContent>
 
@@ -172,7 +177,7 @@ function Experiences() {
             <SegmentHeader
               title="Junior developer"
               sub_text="AdBridg" 
-              highlight="February 2019 - February 2020"
+              highlight="February 2019 — February 2020"
             />
 
             <hr />
@@ -196,7 +201,7 @@ function Experiences() {
                 time by approximately "12%".
               </SubSegment>
               <SubSegment>
-                Rewrote SQL queries and optimized table indexes for better performance; 
+                Rewrote "SQL" queries and optimized table indexes for better performance; 
                 redesigned API architecture to strategically combine "SQL" queries with 
                 "JavaScript" functions, leveraging each technology's strengths to significantly 
                 reduce processing time on complex datasets by an average of "17%".
@@ -234,7 +239,7 @@ function Experiences() {
             <SegmentHeader
               title="Junior Front-end developer"
               sub_text="Fizzz Design Corp." 
-              highlight="November 2017 - February 2019"
+              highlight="November 2017 — February 2019"
             />
 
             <hr />

@@ -256,6 +256,7 @@
 .tags-wrapper {
   --_sm-gap: calc(var(--global-gap) * 0.25);
   --_md-gap: calc(var(--global-gap) * 0.50);
+  --_multiplier: 0.8;
 
   display: grid;
   color: var(--main-text-color);
@@ -267,7 +268,7 @@
   }
   .caption {
     font-weight: bold;
-    font-size: var(--text-size);
+    font-size: calc(var(--text-size) * var(--_multiplier));
     padding-top: 2px;
   }
   .tags-container {
@@ -280,7 +281,7 @@
       background-color: rgba(255 255 255 / 0.1);
       padding: var(--_sm-gap) var(--_md-gap);
       border-radius: 50px;
-      font-size: var(--text-size-sm);
+      font-size: calc(var(--text-size-sm) * var(--_multiplier));
       font-weight: 500;
       transition: all 0.3s ease;
 

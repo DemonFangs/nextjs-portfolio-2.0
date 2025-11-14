@@ -3,6 +3,7 @@ import Link from 'next/link';
 
 import { useGlobalContext } from '../contexts/globalContext';
 import Card from '../components/Card';
+import DecoratedText from '../components/DecorateText';
 import Highlight from '../components/Highlight';
 import Section from '../components/Section';
 
@@ -17,7 +18,7 @@ function Contact() {
 
       <Section
         className="hero w-full"
-        title="Let's start a conversation"
+        title={`Let's start a "conversation"`}
       >
         <div className="background"></div>
         <div className="description">
@@ -78,11 +79,11 @@ function Contact() {
       </Section>
       
       <Section 
-        title="Looking forward to hearing from you"
+        title={`Looking forward to hearing from "you"!`}
         className="contact-form text-center center-all"
       >
         <p>
-          Let's build and innovate together
+          <DecoratedText text={`Let's build and innovate "together".`} />
         </p>
       </Section>
     </>

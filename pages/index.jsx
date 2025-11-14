@@ -47,9 +47,11 @@ const Home = () => {
         <div className="about-profile-content">
           <div className="description">
             <p className="sub-point">
-              An interest in Computer Programming led me to pursue a degree in Computer Science. The 
-              journey took much longer than most, with ups and downs spanning seven years. But with 
-              persistence and perseverance through repeated failures, I finally graduated.
+              <DecoratedText text={[
+                `An interest in Computer Programming led me to pursue a degree in "Computer Science". The`,
+                `journey took much longer than most, with ups and downs spanning seven years. But with`,
+                `"persistence" and "perseverance" through repeated failures, I finally graduated.`
+              ].join(' ')} />
             </p>
             <p className="sub-point">
               <DecoratedText text={[
@@ -64,6 +66,7 @@ const Home = () => {
               'Team Leadership',
               'Problem Solving',
               'Agile Methodologies',
+              'Tenecious',
             ]} />
           </div>
           <div className="profile-picture">
@@ -122,10 +125,15 @@ const Home = () => {
           </Card>
         </div>
       </Section>
-      <Section title="Let's work together" className="lets-work-together text-center center-all">
+      <Section 
+        title={`Let's work "together"!`}
+        className="lets-work-together text-center center-all"
+      >
         <p>
-          Have a project in mind or just want to chat about tech over tea? I'm always open to new 
-          opportunities and conversations.
+          <DecoratedText text={[
+            `Have a project in mind or just want to chat about tech over tea? I'm always open to new`,
+            '"opportunities" and "conversations".'
+          ].join(' ')} />
         </p>
         <p>
           <Link className="btn-bg inline focus" href={`mailto:${global_values.email}`}>
