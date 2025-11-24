@@ -82,7 +82,10 @@ function Card({
     <div className={`card ${className}`}>
       <IconContainer icon={icon} title={title} no_bg={no_bg} text_as_icon={text_as_icon} />
       {title ? <h3 className="heading">{title}</h3> : <></>}
-      <div className={`description ${title ? '' : 'no-title'}`}>
+      <div 
+        className={`description ${title ? '' : 'no-title'}`}
+        data-card-title={text_as_icon ? icon : title}
+      >
         {children}
       </div>
       <ButtonContainer link={link} link_button={link_button} />

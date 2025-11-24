@@ -122,14 +122,15 @@ function Projects() {
           {
             title: '3+',
             values: [
-              'NextJS',
+              'Next.js',
               'D3.js',
+              'Network Protocol Pipeline strategy',
             ]
           },
           {
             title: '2+',
             values: [
-              'WCAG 2.0 Compliant Design',
+              'WCAG 1.0 Compliant Design',
               'Angular JS / Angular 2.0',
             ]
           },
@@ -246,8 +247,8 @@ function Projects() {
             
             <SegmentContent title="Design Concept">
               <SubSegment>
-                Allow users to push deployments on the fly with basic tests (related to SSP adapters)
-                for both production and staged/test domains.
+                Allow users to push deployments on the fly with basic tests (related to ::bidder:: 
+                adapters) for both production and staged/test domains.
               </SubSegment>
               <SubSegment>
                 Show current and past deployment metrics including status of deployment.
@@ -259,7 +260,7 @@ function Projects() {
 
             <SegmentContent title="Pre-existing applications">
               <SubSegment>
-                A proprietary compilation engine that generates customized applications for publisher 
+                A proprietary **Ad Engine** that generates customized applications for publisher 
                 platforms, optimizing bidding lifecycle to ensure optimal value delivery for each 
                 configured line item.
               </SubSegment>
@@ -345,9 +346,9 @@ function Projects() {
             
             <SegmentContent title="Problem to solve">
               <SubSegment>
-                Existing rollup time bleeds to crashes or opens too many database connections causing lag on other operations 
-                resulting in applications crashing due to timeouts. Required manual restarts of VMs via EC2 dashboard or 
-                restart of docker containers depending on crash level.
+                Existing rollup time bleeds to crashes or opens too many database connections causing lag on 
+                other operations resulting in applications crashing due to timeouts. Required manual restarts 
+                of VMs via EC2 dashboard or restart of docker containers depending on crash level.
               </SubSegment>
               <SubSegment>
                 Too many joins, nested queries and/or large data aggregrations were lagging the system.
@@ -356,8 +357,8 @@ function Projects() {
             
             <SegmentContent title="Solutions">
               <SubSegment>
-                Created new intermediate aggregation tables to breakdown large datasets into related chunks, freeing processing 
-                time at the cost of space.
+                Created new intermediate aggregation tables to breakdown large datasets into related chunks, 
+                freeing processing time at the cost of space.
               </SubSegment>
             </SegmentContent>
 
@@ -388,31 +389,32 @@ function Projects() {
             <SegmentContent title="Design Concept">
               <SubSegment>
                 To be able to crawl any publiser's `ads.txt` file — provided the URL — and 
-                determine if all IAB guidelines are maintained and cross reference if all 
-                the listed SSPs list the mentioned domains.
+                determine if all ::IAB:: guidelines are maintained and cross reference if all 
+                the listed ::SSP::s list the mentioned domains.
               </SubSegment>
               <SubSegment>
-                Structured validation output into three severity levels—errors, warnings, and passed — with 
+                Structured validation output into three severity levels — errors, warnings, and passed — with 
                 occurrence counts for each category. Provided expandable detailed explanations for each issue, 
-                supplemented with tooltips linking to applicable IAB specification rules.
+                supplemented with tooltips linking to applicable ::IAB:: specification rules.
               </SubSegment>
             </SegmentContent>
             
             <SegmentContent title="Implementation">
               <SubSegment>
-                Architected a modular "crawler" that fetches `ads.txt` files from specified domains and recursively 
-                retrieves referenced `ads.txt` files per IAB guidelines. The modular design extends functionality 
-                to retrieve `sellers.json` files from associated SSPs automatically.
+                Architected a modular "crawler" that fetches `ads.txt` files from specified domains and 
+                recursively retrieves referenced `ads.txt` files per ::IAB:: guidelines. The modular design extends 
+                functionality to retrieve `sellers.json` files from associated ::SSP::s automatically.
               </SubSegment>
               <SubSegment>
-                Built automated "cron jobs" that periodically update and cache frequently-accessed `sellers.json` 
-                files, significantly reducing validation processing overhead. Implemented user preference controls for 
-                fresh data retrieval versus cached file usage, with cache timestamps for informed decision-making.
+                Built automated "cron jobs" that periodically update and cache frequently-accessed 
+                `sellers.json` files, significantly reducing validation processing overhead. Implemented user 
+                preference controls for fresh data retrieval versus cached file usage, with cache timestamps 
+                for informed decision-making.
               </SubSegment>
               <SubSegment>
-                Designed a hierarchical information architecture with layered UI components that progressively reveal 
-                nested datasets, balancing simplicity with comprehensive data access. Refined the interface through 
-                multiple design iterations to optimize cognitive load and user comprehension.
+                Designed a hierarchical information architecture with layered UI components that progressively 
+                reveal nested datasets, balancing simplicity with comprehensive data access. Refined the 
+                interface through multiple design iterations to optimize cognitive load and user comprehension.
               </SubSegment>
             </SegmentContent>
 
@@ -492,9 +494,9 @@ function Projects() {
             
             <SegmentContent title="Design Concept">
               <SubSegment>
-                Design a Google Sheets integration that bridges the existing API with a familiar 
+                To design a Google Sheets integration that bridges the existing API with a familiar 
                 spreadsheet interface, enabling non-technical users to manage publisher line 
-                items without direct database access
+                items without direct database access.
               </SubSegment>
               <SubSegment>
                 The system should be able to validate data entries in real-time by querying the 
@@ -563,15 +565,13 @@ function Projects() {
             
             <SegmentContent title="Design Concept">
               <SubSegment>
-                Designed an interactive spreadsheet-style table interface with seamless toggling 
+                Design an interactive spreadsheet-style table interface with seamless toggling 
                 between view and edit modes, enabling users to work efficiently without leaving 
                 the table context.
               </SubSegment>
               <SubSegment>
-                Implemented keyboard navigation patterns familiar to spreadsheet users: `Enter` 
-                and `Shift+Enter` for vertical row navigation, and `Tab` and `Shift+Tab` for 
-                horizontal cell traversal, ensuring a fluid, mouse-free workflow for power users 
-                accustomed to traditional spreadsheet applications.
+                To implement keyboard shortcuts to traverse within the table context, providing 
+                a more spreadsheet like user experience.
               </SubSegment>
             </SegmentContent>
 
@@ -579,6 +579,12 @@ function Projects() {
               <SubSegment>
                 Developed a modular, reusable table component that replicates spreadsheet 
                 functionality with bidirectional state management for view and edit modes.
+              </SubSegment>
+              <SubSegment>
+                Implemented keyboard navigation patterns familiar to spreadsheet users: `Enter` 
+                and `Shift+Enter` for vertical row navigation, and `Tab` and `Shift+Tab` for 
+                horizontal cell traversal, ensuring a fluid, mouse-free workflow for power users 
+                accustomed to traditional spreadsheet applications.
               </SubSegment>
               <SubSegment>
                 Integrated intelligent column sorting that responds to header interactions, 
@@ -603,6 +609,7 @@ function Projects() {
             <SegmentFooter tags={[
               'JavaScript',
               'Git',
+              'User Experience Strategies',
               'Model View Controller (MVC)',
             ]} />
           </Segment>

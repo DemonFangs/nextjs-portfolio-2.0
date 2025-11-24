@@ -119,6 +119,7 @@ code {
   color: var(--alt-text-color);
   font-weight: 600;
   text-decoration: none;
+  print-color-adjust: exact;
 
   .hero .title & {
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
@@ -220,6 +221,10 @@ hr {
   position: relative;
   padding: var(--body-block-padding) var(--body-inline-padding);
 
+  @media print {
+    padding: 20px 10px;
+  }
+
   &:nth-child(odd):not(:first-child) {
     background-color: var(--main-bg);
   }
@@ -234,6 +239,10 @@ hr {
 
   .text-wrapper {
     width: fit-content;
+
+    @media print {
+      width: 100%;
+    }
 
     &.w-full {
       width: 100%;
@@ -489,6 +498,45 @@ hr {
   }
 }
 
+.inline-link {
+  --_text-color: var(--alt-text-color);
+  --_underline-color: var(--alt-text-color);
+  --_underline-width: 2px;
+
+  color: var(--_text-color);
+  text-decoration: none;
+  font-weight: 600;
+  position: relative;
+  transition: all 0.3s ease;
+  border-bottom: var(--_underline-width) solid var(--_underline-color);
+  margin-bottom: calc(var(--_underline-width) * -1);
+
+  @media (max-width: 1024px) {
+    --_underline-width: 1px;
+  }
+
+  @media (max-width: 720px) {
+    --_underline-width: 0;
+  }
+
+  &:hover {
+    --_text-color: var(--alt-second-text-color);
+    --_underline-color: var(--alt-second-text-color);
+
+    &::after {
+      margin-left: 4px;
+    }
+  }
+
+  &::after {
+    content: '→';
+    margin-left: 2px;
+    display: inline-block;
+    transition: margin 0.3s ease;
+    transform: translateY(-15%);
+  }
+}
+
 .about-profile-content {
   display: flex;
   flex-direction: row;
@@ -533,6 +581,16 @@ a.external-link {
 p.sub-point {
   font-size: var(--text-size);
   line-height: var(--line-height);
+
+  &.quote {
+    margin-block: var(--global-gap);
+    margin-left: calc(var(--global-gap) * 0.25);
+    color: var(--alt-text-color);
+    border-left: 4px solid var(--alt-text-color);
+    padding-left: var(--global-gap);
+    padding-block: calc(var(--global-gap) * 0.50);
+    font-style: italic;
+  }
 }
 
 .panel-container {
@@ -571,4 +629,14 @@ p.sub-point {
   color: var(--second-text-color);
   background-color: var(--tirtiary-bg);
   padding: calc(var(--global-gap) * 0.50);
+}
+
+@media print {
+  * {
+    color: inherit;
+    background-color: white;
+    letter-spacing: initial;
+    box-shadow: none;
+    border: 1px solid transparent;
+  }
 }

@@ -53,11 +53,13 @@ const Home = () => {
                 `"persistence" and "perseverance" through repeated failures, I finally graduated.`
               ].join(' ')} />
             </p>
+            <p className="sub-point quote">
+              "Let this be an example of how failure is not an obstacle but an opportunity to get stronger."
+            </p>
             <p className="sub-point">
               <DecoratedText text={[
-                `Let this be an example of how "failure is not an obstacle but an opportunity to get`,
-                `stronger". Today, I channel that same determination into building robust "software`,
-                `solutions" and "leading teams" to success.`
+                `Today, I channel that same determination into building robust software`,
+                `solutions and "leading" teams to success.`
               ].join(' ')} />
             </p>
             <TagList tags={[

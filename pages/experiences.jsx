@@ -29,17 +29,20 @@ function Experiences() {
       
       <Section title="Overall impact" className="summary">
         <Summary items={[
-          { title: 'Reduced deployment errors', value: '30%' },
+          { title: 'Reduced errors', value: '30%' },
           { title: 'Improved scalability', value: '20%' },
           { title: 'Increased productivity', value: '19%' },
           { title: 'Enhanced compliance', value: '15%' },
+          { title: 'Increased deliverables', value: '7%' },
           { title: 'Client retention boost', value: '14%' },
-          { title: 'User engagement growth', value: '10%' },
+          { title: 'User engagement growth', value: '18%' },
         ]} />
       </Section>
 
       <Section title="Experience" className="experiences">
         <div className="segments-container">
+
+          {/* ------------------- Platform Engineer ---------------- */}
           <Segment>
             <SegmentHeader
               title="Platform Engineer"
@@ -49,84 +52,135 @@ function Experiences() {
 
             <hr />
 
+            <SegmentContent title="Applications & Status">
+              <SubSegment>
+                The **Hub app (v2.0)** — built on the [Custom MVC framework](/projects/#custom-mvc) — 
+                completely replaced the legacy application with significantly expanded features. This 
+                unified several disparate systems into a cohesive interface and achieved nearly "19%" 
+                improvement in user engagement.
+              </SubSegment>
+              <SubSegment>
+                The **Hub app (v3.0)** — built on the "Next.js" framework following the latest practices 
+                back then, to create more complex UI designs allowing to mesh together multiple seghments 
+                scatterned in **Hub app (v2.0)** to a more homogonised page.
+              </SubSegment>
+              <SubSegment>
+                The **Rollup engine** is responsible for recieving and aggragating data from various 
+                pixel trackers out in production.
+              </SubSegment>
+              <SubSegment>
+                The proprietary **Ad Engine** built on top of the "Prebid.js" library that optimizes Ad 
+                revenue for publisher's products through various strategies that can be tweaked using 
+                both the **Hub app (v2.0)** and **Hub app (v3.0)**.
+              </SubSegment>
+              <SubSegment>
+                The [Ads.txt Validator](/projects/#ads-txt-validator) **app** [[deprecated]] designed to 
+                validate publishers' ::Ads.txt:: file to the standards set by the ::IAB::.
+              </SubSegment>
+              <SubSegment>
+                The **API (REST)** operates as the central middleware layer, orchestrating secure 
+                communication between the database, internal application suite, and external third-party 
+                integrations.
+              </SubSegment>
+            </SegmentContent>
+
+            <SegmentContent title="Research & Planning">
+              <SubSegment>
+                Researched and created benchmarks in collaboration with other engineers to find 
+                existing Javascript Frameworks that best matches the criterias to develop the 
+                next iteration of the **Hub app (v3.0)**.
+              </SubSegment>
+            </SegmentContent>
+
             <SegmentContent title="Architecture & Performance">
               <SubSegment>
-                Optimized platform performance by refactoring monolithic services into microservices,
-                improving system performance by "4%" and scalability by "20%".
+                Migrated and developed new features in "Next.js" powered **Hub app (v3.0)**, 
+                including adding a new route within the existing 
+                [CI/CD pipeline](/projects/#ci-cd-pipeline) to deploy from **Hub app (v3.0)** 
+                alongside **Hub app (v2.0)** while keeping the deployment branches separated.
               </SubSegment>
               <SubSegment>
-                Led migration from legacy framework to Next.js, achieving "10%" performance improvement 
-                with enhanced features
-              </SubSegment>
-              <SubSegment>
-                Developed scalable data aggregation pipelines, reducing processing time by "3%" and 
-                improving data reliability with "9%" reduction in user confusion.
-              </SubSegment>
-            </SegmentContent>
-
-            <SegmentContent title="DevOps & CI/CD" id="ci-cd-pipeline">
-              <SubSegment>
-                Integrated the new "NextJS" system to the existing CI/CD pipeline,
-                
-              </SubSegment>
-              <SubSegment>
-                Redesigned CI/CD pipeline with modern testing suite, reducing deployment time by "30%" and 
-                production bugs significantly.
-              </SubSegment>
-              <SubSegment>
-                Developed logging system with automated notifications, reducing manual intervention by "50%".
+                Collaborated with engineers to design a "dynamic query generation" system that 
+                constructs database queries based on user actions and selections in the frontend, 
+                with queries tailored per page or model context. Since the API layer was 
+                originally architected around strict, predefined relational queries, this required 
+                rethinking the query architecture to support flexible, user-driven data retrieval 
+                while maintaining data integrity and performance.
               </SubSegment>
             </SegmentContent>
 
-            <SegmentContent title="Client Impact & Leadership">
+            <SegmentContent title="Improvements & Impact">
               <SubSegment>
-                Enhanced web application with new features, increasing user engagement by "10%" and 
-                client retention by "14%".
+                Designed a [Google Sheets integration](/projects/#google-sheet-api-integration) using 
+                "AppScript" to allow internal team to maintain line items provided by publishers over 
+                Google sheets.
               </SubSegment>
               <SubSegment>
-                Developed ads.txt scraper tool adhering to IAB guidelines, enhancing ad placement 
-                accuracy and compliance by "15%".
+                Deveoped a **Dynamic Ad Slot Injection** system that dynamically injects ad slots into 
+                an infinite scrolling page. This system includes configurable controls that allow users 
+                to manage key parameters such as the number of ad slots to display, refresh intervals, 
+                and conditions for halting ad display.
               </SubSegment>
               <SubSegment>
-                Mentored DevOps team members and junior developers on internal systems, coding 
-                practices, and testing methodologies.
+                Implemented a **Sticky Ad Slot** functionality to convert any existing ad slot into a 
+                sticky (on-scroll) ad. Additionally, introduced conditional behavior setups that enable 
+                specific ad slots to become sticky based on customizable criteria.
               </SubSegment>
               <SubSegment>
-                Built in-house analytics tool using Plotly.js, enabling "20%" faster data-driven decisions.
-              </SubSegment>
-              <SubSegment>
-                Increased Analytics team productivity by "19%" through development 
-                of multiple in-house application features.
+                Created a suite of **UI Tools for Visualization and Debugging** complex ad behaviors, 
+                providing users with an intuitive interface to monitor and adjust ad slot dynamics in 
+                real-time.
               </SubSegment>
             </SegmentContent>
 
-            <SegmentContent title="Development & Quality">
+            <SegmentContent title="Leadership & Training">
               <SubSegment>
-                Debugged distributed applications, reducing production errors by "20%" through thorough 
-                testing and optimization
+                "Mentored" and developed junior engineering talent through comprehensive training 
+                on development ecosystem tools, best practices, and architectural patterns.
               </SubSegment>
               <SubSegment>
-                Spearheaded client-facing application development using custom in-house framework, 
-                improving client satisfaction and usability
+                "Collaborated" hands-on across diverse micro-projects, providing real-time 
+                guidance on problem-solving approaches for both straightforward implementations 
+                and complex technical challenges.
+              </SubSegment>
+              <SubSegment>
+                Fostered a culture of code quality through "pair programming" and thorough code 
+                reviews, ensuring adherence to clean code principles, consistent naming conventions, 
+                and maintainable coding standards that elevated overall team output.
               </SubSegment>
             </SegmentContent>
 
             <hr />
 
             <SegmentFooter tags={[
+              'Google AppScript',
               'Microservices',
               'Next.js',
-              'CI/CD',
+              'CI/CD Pipeline',
               'Data Pipelines',
               'DevOps',
               'Testing',
               'Mentorship',
+              'Pair Programming',
               'Full-Stack',
-              'Git versioning strategy'
+              'Git versioning strategy',
+              'Web Crawler',
+              'Validation Engine',
+              'Node.js',
+              'Dynamic Query',
+              'SQL',
+              'MySQL',
+              'Docker',
+              'Data Pipelines',
+              'JavaScript',
+              'Model View Controller (MVC)',
+              'Concurrent Projects',
+              'Prebid.js',
+              'Revenue Optimization',
             ]} />
           </Segment>
-          {/* Platform Engineear */}
 
+          {/* ----------- Intermediate Full-stack developer -------- */}
           <Segment>
             <SegmentHeader
               title="Intermediate Full-stack developer"
@@ -136,25 +190,70 @@ function Experiences() {
 
             <hr />
 
-            <SegmentContent title="Design & Architecture">
+            <SegmentContent title="Applications & Status">
               <SubSegment>
-                ???
+                The **Analytics app** [[deprecated]] delivered sophisticated ad inventory performance 
+                analysis with flexible filtering capabilities for customers and administrators. 
+                Functionality was later consolidated into the unified **Hub app (v2.0)** experience.
               </SubSegment>
               <SubSegment>
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Amet perspiciatis et, tenetur sit 
-                facilis quisquam repellendus doloribus quod exercitationem optio maxime repellat veniam 
-                aliquam tempore autem beatae, reprehenderit quis sequi!
+                The **Hub app (v1.0)** [[deprecated]] provided deployment and configuration management 
+                with custom branding aligned to client specifications.
+              </SubSegment>
+              <SubSegment>
+                The **Hub app (v2.0)** — built on the [Custom MVC framework](/projects/#custom-mvc) — 
+                completely replaced the legacy application with significantly expanded features. This 
+                unified several disparate systems into a cohesive interface and achieved nearly "19%" 
+                improvement in user engagement.
+              </SubSegment>
+              <SubSegment>
+                The proprietary **Ad Engine** built on top of the "Prebid.js" library that optimizes Ad 
+                revenue for publisher's products through various strategies that can be tweaked using 
+                the **Hub app**s.
+              </SubSegment>
+              <SubSegment>
+                The **API (REST)** operates as the central middleware layer, orchestrating secure 
+                communication between the database, internal application suite, and external third-party 
+                integrations.
               </SubSegment>
             </SegmentContent>
 
-            <SegmentContent title="Leadership & Training">
+            <SegmentContent title="Changes and Impact">
               <SubSegment>
-                ???
+                Collaborated closely with senior developers to architect and prototype 
+                the [Custom MVC framework](/projects/#custom-mvc). Progressively assumed full 
+                ownership and shepherded the project from initial concept through production 
+                deployment and ongoing evolution.
               </SubSegment>
               <SubSegment>
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Amet perspiciatis et, tenetur sit 
-                facilis quisquam repellendus doloribus quod exercitationem optio maxime repellat veniam 
-                aliquam tempore autem beatae, reprehenderit quis sequi!
+                Successfully migrated the **Analytics app** into the new framework while 
+                simultaneously enhancing its capabilities with advanced visualization features 
+                powered by "Plotly.js". Abstracted the library's complexity through well-designed 
+                component interfaces that ensured consistent user experience throughout the 
+                application.
+              </SubSegment>
+              <SubSegment>
+                Engineered a robust automated [CI/CD pipeline](/projects/#ci-cd-pipeline) for 
+                the Ad Management application, integrating comprehensive testing frameworks that 
+                reduced runtime errors by nearly "28%" and accelerated release cycles.
+              </SubSegment>
+              <SubSegment>
+                Designed and implemented innovative features like the [Spreadsheet-Style 
+                Editor](/projects/#google-sheet-features) that replicated familiar Google Sheets 
+                and Microsoft Excel interactions. This resulted in "16%" increase in user engagement 
+                and generated overwhelmingly positive qualitative feedback from users.
+              </SubSegment>
+              <SubSegment>
+                Delivered a sophisticated deployment management interface featuring [Change 
+                Visualization UI](/projects/#git-like-diff) with Git-inspired diff visualization, 
+                providing clear visibility into changes between deployments and reduced unnecessary 
+                deployment cycles by "31%".
+              </SubSegment>
+              <SubSegment>
+                Created ::SSP::s adapters in the **Ad Engine** to allow added options on top of the 
+                "Prebid.js" library for more granular control and better ad revenue. This allowed 
+                publisers across the entire platform to seamlessly add these ::bidders:: to their 
+                auction list — adding additional revenue opportunities upto "1.8%".
               </SubSegment>
             </SegmentContent>
 
@@ -162,17 +261,28 @@ function Experiences() {
 
             <SegmentFooter tags={[
               'Microservices',
-              'Next.js',
-              'CI/CD',
+              'CI/CD Pipeline',
+              'SQL',
+              'MySQL',
               'Data Pipelines',
               'DevOps',
               'Testing',
               'Mentorship',
               'Full-Stack',
-              'Git versioning strategy'
+              'JavaScript',
+              'Git Versioning Strategy',
+              'Model View Controller (MVC)',
+              'Plotly.js',
+              'Migration Strategies',
+              'Concurrent Projects',
+              'Prebid.js',
+              'Revenue Optimization',
+              'Node.js',
+              'Docker',
             ]} />
           </Segment>
 
+          {/* ----------------- Junior developer ------------------- */}
           <Segment>
             <SegmentHeader
               title="Junior developer"
@@ -184,12 +294,13 @@ function Experiences() {
 
             <SegmentContent title="Applications">
               <SubSegment>
-                The **Analytics app** <i>{'(deprecated)'}</i> allowed both customers and admins \
+                The **Analytics app** [[deprecated]] allowed both customers and admins \
                 to view and analyze performance of ad inventories based on certain filters.
               </SubSegment>
               <SubSegment>
-                The **Hub app** allows both customers and admins to push and deploy necessary changes. 
-                Colors and theme were taken from the branding profile provided.
+                The **Hub app (v1.0)** [[deprecated]] allows both customers and admins to 
+                push and deploy necessary changes. Colors and theme were taken from the 
+                branding profile provided.
               </SubSegment>
             </SegmentContent>
 
@@ -202,9 +313,9 @@ function Experiences() {
               </SubSegment>
               <SubSegment>
                 Rewrote "SQL" queries and optimized table indexes for better performance; 
-                redesigned API architecture to strategically combine "SQL" queries with 
-                "JavaScript" functions, leveraging each technology's strengths to significantly 
-                reduce processing time on complex datasets by an average of "17%".
+                redesigned API architecture to strategically combine queries with "JavaScript" 
+                functions, leveraging each technology's strengths to significantly reduce 
+                processing time on complex datasets by an average of "17%".
               </SubSegment>
               <SubSegment>
                 Modernized analytics application UI; implemented role-based feature access with 
@@ -232,9 +343,12 @@ function Experiences() {
               'Code Reader',
               'Aurora (AWS)',
               'Branding',
+              'Node.js',
+              'Docker',
             ]} />
           </Segment>
 
+          {/* ------------- Junior Front-end developer ------------- */}
           <Segment>
             <SegmentHeader
               title="Junior Front-end developer"
@@ -270,7 +384,7 @@ function Experiences() {
               </SubSegment>
               <SubSegment>
                 A modular design architecture that uses a file-based routing system — similar 
-                to "NextJS" — allowing anyone to easily make changes to the site.
+                to "Next.js" — allowing anyone to easily make changes to the site.
               </SubSegment>
               <SubSegment className="link">
                 <Link 
