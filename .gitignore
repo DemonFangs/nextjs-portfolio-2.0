@@ -9,6 +9,12 @@
 # testing
 /coverage
 
+# private settings
+/private
+
+# env files
+*.env
+
 # next.js
 /.next/
 /out/
