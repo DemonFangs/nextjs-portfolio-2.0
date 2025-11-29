@@ -21,7 +21,7 @@ function Experiences() {
         <div className="description">
           <DecoratedText text={[
             `"7+" years of transforming complex challenges into scalable solutions.`,
-            `Specialized in platform engineering, microservices architecture, and`,
+            `Specialized in platform engineering, micro-services architecture, and`,
             `team leadership.`
           ].join(' ')} />
         </div>
@@ -61,11 +61,11 @@ function Experiences() {
               </SubSegment>
               <SubSegment>
                 The **Hub app (v3.0)** — built on the "Next.js" framework following the latest practices 
-                back then, to create more complex UI designs allowing to mesh together multiple seghments 
-                scatterned in **Hub app (v2.0)** to a more homogonised page.
+                back then, to create more complex UI designs allowing to mesh together multiple segments 
+                scattered in **Hub app (v2.0)** to a more homogenized page.
               </SubSegment>
               <SubSegment>
-                The **Rollup engine** is responsible for recieving and aggragating data from various 
+                The **Roll-up engine** is responsible for receiving and aggregating data from various 
                 pixel trackers out in production.
               </SubSegment>
               <SubSegment>
@@ -78,7 +78,7 @@ function Experiences() {
                 validate publishers' ::Ads.txt:: file to the standards set by the ::IAB::.
               </SubSegment>
               <SubSegment>
-                The **API (REST)** operates as the central middleware layer, orchestrating secure 
+                The **API (REST)** operates as the central middle-ware layer, orchestrating secure 
                 communication between the database, internal application suite, and external third-party 
                 integrations.
               </SubSegment>
@@ -87,7 +87,7 @@ function Experiences() {
             <SegmentContent title="Research & Planning">
               <SubSegment>
                 Researched and created benchmarks in collaboration with other engineers to find 
-                existing Javascript Frameworks that best matches the criterias to develop the 
+                existing Javascript Frameworks that best matches all the criteria to develop the 
                 next iteration of the **Hub app (v3.0)**.
               </SubSegment>
             </SegmentContent>
@@ -116,7 +116,7 @@ function Experiences() {
                 Google sheets.
               </SubSegment>
               <SubSegment>
-                Deveoped a **Dynamic Ad Slot Injection** system that dynamically injects ad slots into 
+                Developed a **Dynamic Ad Slot Injection** system that dynamically injects ad slots into 
                 an infinite scrolling page. This system includes configurable controls that allow users 
                 to manage key parameters such as the number of ad slots to display, refresh intervals, 
                 and conditions for halting ad display.
@@ -124,7 +124,7 @@ function Experiences() {
               <SubSegment>
                 Implemented a **Sticky Ad Slot** functionality to convert any existing ad slot into a 
                 sticky (on-scroll) ad. Additionally, introduced conditional behavior setups that enable 
-                specific ad slots to become sticky based on customizable criteria.
+                specific ad slots to become sticky based on customization criteria.
               </SubSegment>
               <SubSegment>
                 Created a suite of **UI Tools for Visualization and Debugging** complex ad behaviors, 
@@ -212,7 +212,7 @@ function Experiences() {
                 the **Hub app**s.
               </SubSegment>
               <SubSegment>
-                The **API (REST)** operates as the central middleware layer, orchestrating secure 
+                The **API (REST)** operates as the central middle-ware layer, orchestrating secure 
                 communication between the database, internal application suite, and external third-party 
                 integrations.
               </SubSegment>
@@ -252,8 +252,8 @@ function Experiences() {
               <SubSegment>
                 Created ::SSP::s adapters in the **Ad Engine** to allow added options on top of the 
                 "Prebid.js" library for more granular control and better ad revenue. This allowed 
-                publisers across the entire platform to seamlessly add these ::bidders:: to their 
-                auction list — adding additional revenue opportunities upto "1.8%".
+                publishers' across the entire platform to seamlessly add these ::bidders:: to their 
+                auction list — adding additional revenue opportunities up to "1.8%".
               </SubSegment>
             </SegmentContent>
 
@@ -327,7 +327,7 @@ function Experiences() {
 
             <SegmentContent title="Design and Features">
               <SubSegment>
-                Mordernized UI design for the Hub application with colors and themes taken from the
+                Modernized UI design for the Hub application with colors and themes taken from the
                 branding profile provided.
               </SubSegment>
             </SegmentContent>
@@ -360,17 +360,17 @@ function Experiences() {
 
             <SegmentContent title="Design and Branding">
               <SubSegment>
-                Built user interfaces and experiences based on branding criterias provided by inhouse 
-                graphic designer; including animations built using images provided by the designer 
-                and "CSS keyframes".
+                Built user interfaces and experiences based on list of branding criteria provided 
+                by in-house graphic designer; including animations built using images provided by 
+                the designer and "CSS keyframes".
               </SubSegment>
               <SubSegment>
-                "Bootstrap" library integrated selectively, due to resistions of bandwidth or customer 
-                needs.
+                "Bootstrap" library integrated selectively, due to restrictions of bandwidth or 
+                customer needs.
               </SubSegment>
             </SegmentContent>
 
-            <SegmentContent title="Functionality and User experince" id="ci-cd-pipeline">
+            <SegmentContent title="Functionality and User experience" id="ci-cd-pipeline">
               <SubSegment>
                 All applications were "AODA/WCAG 1.0" validated, creating a comfortable experience 
                 for all users.
@@ -379,7 +379,7 @@ function Experiences() {
 
             <SegmentContent title="Public projects: Fizzz Design Corp. official webpage">
               <SubSegment>
-                Design based on mockup created by inhouse graphic designer. Implemented 
+                Design based on mock-up created by in-house graphic designer. Implemented 
                 using "JavaScript", "CSS" and "HTML".
               </SubSegment>
               <SubSegment>
@@ -400,7 +400,7 @@ function Experiences() {
 
             <SegmentContent title="Public projects: Office of Integrity Commissioner">
               <SubSegment>
-                Design based on mockup created by inhouse graphic designer. Implemented 
+                Design based on mock-up created by in-house graphic designer. Implemented 
                 using "AngularJS", "CSS" and "XML".
               </SubSegment>
               <SubSegment>
