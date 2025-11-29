@@ -188,7 +188,7 @@ function Projects() {
               <SubSegment>
                 Large datasets can be partitioned into modular, manageable Models and determine their 
                 initialization strategy: sequential loading when dependencies exist or asynchronous 
-                loading when conditions allow parallel processing. Models maintain interconnectivity, 
+                loading when conditions allow parallel processing. Models maintain inter-connectivity, 
                 and Views are built as reusable modular components.
               </SubSegment>
               <SubSegment>
@@ -209,7 +209,7 @@ function Projects() {
               </SubSegment>
             </SegmentContent>
 
-            <SegmentContent title="Challanges">
+            <SegmentContent title="Challenges">
               <SubSegment>
                 Single-developer ownership slowed maintenance and debugging as issues had to be addressed 
                 between other projects, delaying resolution while developing "stronger multi-project 
@@ -261,7 +261,7 @@ function Projects() {
             <SegmentContent title="Pre-existing applications">
               <SubSegment>
                 A proprietary **Ad Engine** that generates customized applications for publisher 
-                platforms, optimizing bidding lifecycle to ensure optimal value delivery for each 
+                platforms, optimizing bidding life-cycle to ensure optimal value delivery for each 
                 configured line item.
               </SubSegment>
             </SegmentContent>
@@ -280,7 +280,7 @@ function Projects() {
                 the framework with "Docker" for horizontal scalability.
               </SubSegment>
               <SubSegment>
-                Architected a "Redis" based queueing system in the "RESTful" API layer — which serves as the 
+                Architected a "Redis" based queuing system in the "RESTful" API layer — which serves as the 
                 central data interface for the "SQL" database, "AWS S3" storage, and external applications; then 
                 modified the "Docker" container to function as a worker consuming tasks from the "Redis" queue.
               </SubSegment>
@@ -302,7 +302,7 @@ function Projects() {
               </SubSegment>
             </SegmentContent>
 
-            <SegmentContent title="Challanges">
+            <SegmentContent title="Challenges">
               <SubSegment>
                 The rudimentary "queuing system" lacked the ability to cancel queued deployments, occasionally 
                 requiring multiple deployments to correct issues — creating unnecessary noise in the deployment 
@@ -310,7 +310,7 @@ function Projects() {
               </SubSegment>
               <SubSegment>
                 "Git"'s synchronous commit model prevents concurrent modifications, causing merge conflicts 
-                when multiple deployments, accorss many branches, modify the same lines of code.
+                when multiple deployments, across many branches, modify the same lines of code.
               </SubSegment>
             </SegmentContent>
 
@@ -346,12 +346,12 @@ function Projects() {
             
             <SegmentContent title="Problem to solve">
               <SubSegment>
-                Existing rollup time bleeds to crashes or opens too many database connections causing lag on 
+                Existing roll-up time bleeds to crashes or opens too many database connections causing lag on 
                 other operations resulting in applications crashing due to timeouts. Required manual restarts 
                 of VMs via EC2 dashboard or restart of docker containers depending on crash level.
               </SubSegment>
               <SubSegment>
-                Too many joins, nested queries and/or large data aggregrations were lagging the system.
+                Too many joins, nested queries and/or large data aggregations were lagging the system.
               </SubSegment>
             </SegmentContent>
             
@@ -388,14 +388,14 @@ function Projects() {
             
             <SegmentContent title="Design Concept">
               <SubSegment>
-                To be able to crawl any publiser's `ads.txt` file — provided the URL — and 
+                To be able to crawl any publisher's `ads.txt` file — provided the URL — and 
                 determine if all ::IAB:: guidelines are maintained and cross reference if all 
                 the listed ::SSP::s list the mentioned domains.
               </SubSegment>
               <SubSegment>
                 Structured validation output into three severity levels — errors, warnings, and passed — with 
                 occurrence counts for each category. Provided expandable detailed explanations for each issue, 
-                supplemented with tooltips linking to applicable ::IAB:: specification rules.
+                supplemented with tool-tips linking to applicable ::IAB:: specification rules.
               </SubSegment>
             </SegmentContent>
             
@@ -478,7 +478,7 @@ function Projects() {
               'JavaScript',
               'Git',
               'Model View Controller (MVC)',
-              'Visualisation',
+              'Visualization',
             ]} />
           </Segment>
 
@@ -527,7 +527,7 @@ function Projects() {
               </SubSegment>
             </SegmentContent>
             
-            <SegmentContent title="Challanges">
+            <SegmentContent title="Challenges">
               <SubSegment>
                 Initial real-time validation proved inefficient as each row change triggered 
                 individual API requests, creating performance bottlenecks and slow user experience. 
@@ -597,8 +597,8 @@ function Projects() {
               </SubSegment>
               <SubSegment>
                 Engineered a comprehensive cell type library supporting diverse input formats 
-                including JSON objects, radio buttons, single-select dropdowns, multi-select 
-                dropdowns, date pickers, number inputs, rich text editors, and custom validators, 
+                including JSON objects, radio buttons, single-select drop-downs, multi-select 
+                drop-downs, date pickers, number inputs, rich text editors, and custom validators, 
                 providing flexibility to handle virtually any data structure or user input 
                 requirement.
               </SubSegment>

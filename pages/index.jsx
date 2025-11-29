@@ -40,7 +40,7 @@ const Home = () => {
           { title: 'Project ownership', value: '6+' },
           { title: 'Cups of Tea', value: '∞' },
           { title: 'Timezone', value: 'EST' },
-          { title: 'Persistancy', value: '9000%' },
+          { title: 'Persistency', value: '9000%' },
         ]} />
       </Section>
       <Section title="About me" className="about-me" id="about-me">
@@ -68,7 +68,7 @@ const Home = () => {
               'Team Leadership',
               'Problem Solving',
               'Agile Methodologies',
-              'Tenecious',
+              'Tenacious',
             ]} />
           </div>
           <div className="profile-picture">
@@ -88,7 +88,7 @@ const Home = () => {
           >
             <p>
               Lead and developed an <Highlight text="Model View Controller" /> framework 
-              for an web app for both Customers and inhouse DevOps.
+              for an web app for both Customers and in-house DevOps.
             </p>
           </Card>
 
@@ -122,7 +122,7 @@ const Home = () => {
             link_button
           >
             <p>
-              Implemeted a google sheet like user experience in <Highlight text="Custom MVC" /> framework.
+              Implemented a google sheet like user experience in <Highlight text="Custom MVC" /> framework.
             </p>
           </Card>
         </div>

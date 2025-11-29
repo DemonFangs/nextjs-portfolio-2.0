@@ -65,7 +65,7 @@ function Navbar({ router }) {
         <div className="get-pdf">
           <Link
             className="btn-bg pdf-link" 
-            href="/Khadem-Avinoor-Alam-Resume.pdf"
+            href="/Khadem-Avinoor-Alam-Resume-2025.pdf"
             title="Open resume PDF in new window"
             target="_blank"
             rel="noreferrer"
