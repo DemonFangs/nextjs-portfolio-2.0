@@ -13,7 +13,7 @@ function Contact() {
   return (
     <>
       <Head>
-        <title>Experiences</title>
+        <title>Khadem A. Alam | Contact</title>
       </Head>
 
       <Section

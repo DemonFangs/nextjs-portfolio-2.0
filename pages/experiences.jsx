@@ -10,7 +10,7 @@ function Experiences() {
   return (
     <>
       <Head>
-        <title>Experiences</title>
+        <title>Khadem A. Alam | Experiences</title>
       </Head>
 
       <Section

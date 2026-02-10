@@ -15,7 +15,7 @@ const Home = () => {
   return (
     <>
       <Head>
-        <title>Home</title>
+        <title>Khadem A. Alam</title>
       </Head>
 
       <Section
