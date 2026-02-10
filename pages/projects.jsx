@@ -45,7 +45,7 @@ function Projects() {
   return (
     <>
       <Head>
-        <title>Projects</title>
+        <title>Khadem A. Alam | Projects</title>
       </Head>
 
       <Section
