@@ -1,11 +1,11 @@
 
-function ContactForm() {
+function ContactForm({ items }) {
   return (
     <div className={`contact-wrapper`}>
       <div className="pre-text">
         <div>Contact @</div>
         <div className="image-block-wrapper ">
-          {items.map(({ title, src, external_link }, index) => (
+          {items?.map(({ title, src, external_link }, index) => (
             <a
               key={`contact-form-section-${index}`}
               className="image-block-item"

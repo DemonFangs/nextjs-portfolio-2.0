@@ -1,7 +1,6 @@
 import Head from 'next/head';
 import Link from 'next/link';
 
-import { useGlobalContext } from '../contexts/globalContext';
 import Card from '../components/Card';
 import DecoratedText from '../components/DecorateText';
 import Highlight from '../components/Highlight';
@@ -9,6 +8,7 @@ import Section from '../components/Section';
 import Summary from '../components/Summary';
 import TagList from '../components/TagList';
 import YearsExperience from '../components/YearsExperience';
+import { useGlobalContext } from '../contexts/globalContext';
 
 const Home = () => {
   const global_values = useGlobalContext();
@@ -35,41 +35,49 @@ const Home = () => {
         </div>
       </Section>
       <Section title="Overview" className="summary">
-        <Summary items={[
-          { title: 'Years of Experience', value: '7+' },
-          { title: 'Project ownership', value: '6+' },
-          { title: 'Cups of Tea', value: '∞' },
-          { title: 'Timezone', value: 'EST' },
-          { title: 'Persistency', value: '9000%' },
-        ]} />
+        <Summary
+          items={[
+            { title: 'Years of Experience', value: '7+' },
+            { title: 'Project ownership', value: '6+' },
+            { title: 'Cups of Tea', value: '∞' },
+            { title: 'Timezone', value: 'EST' },
+            { title: 'Persistency', value: '9000%' },
+          ]}
+        />
       </Section>
       <Section title="About me" className="about-me" id="about-me">
         <div className="about-profile-content">
           <div className="description">
             <p className="sub-point">
-              <DecoratedText text={[
-                `An interest in Computer Programming led me to pursue a degree in "Computer Science". The`,
-                `journey took much longer than most, with ups and downs spanning seven years. But with`,
-                `"persistence" and "perseverance" through repeated failures, I finally graduated.`
-              ].join(' ')} />
+              <DecoratedText
+                text={[
+                  `An interest in Computer Programming led me to pursue a degree in "Computer Science". The`,
+                  `journey took much longer than most, with ups and downs spanning seven years. But with`,
+                  `"persistence" and "perseverance" through repeated failures, I finally graduated.`,
+                ].join(' ')}
+              />
             </p>
             <p className="sub-point quote">
-              "Let this be an example of how failure is not an obstacle but an opportunity to get stronger."
+              &quot;Let this be an example of how failure is not an obstacle but an opportunity to get stronger.&quot;
             </p>
             <p className="sub-point">
-              <DecoratedText text={[
-                `Today, I channel that same determination into building robust software`,
-                `solutions and "leading" teams to success.`
-              ].join(' ')} />
+              <DecoratedText
+                text={[
+                  `Today, I channel that same determination into building robust software`,
+                  `solutions and "leading" teams to success.`,
+                ].join(' ')}
+              />
             </p>
-            <TagList tags={[
-              'Full-Stack Development',
-              'Cloud Architecture',
-              'Team Leadership',
-              'Problem Solving',
-              'Agile Methodologies',
-              'Tenacious',
-            ]} />
+            <TagList
+              tags={[
+                'Full-Stack Development',
+                'Cloud Architecture',
+                'Team Leadership',
+                'Problem Solving',
+                'Agile Methodologies',
+                'Tenacious',
+              ]}
+            />
           </div>
           <div className="profile-picture">
             {/* <img src="/profile_pic.jpg" alt="Khadem Avinoor Alam potrait" /> */}
@@ -79,7 +87,7 @@ const Home = () => {
       </Section>
       <Section title="Highlights" className="featured-project">
         <div className="cards-container">
-          <Card 
+          <Card
             title="Custom MVC Framework"
             icon="MVC"
             text_as_icon
@@ -87,19 +95,19 @@ const Home = () => {
             link_button
           >
             <p>
-              Lead and developed an <Highlight text="Model View Controller" /> framework 
+              Lead and developed an <Highlight text="Model View Controller" /> framework
               for an web app for both Customers and in-house DevOps.
             </p>
           </Card>
 
-          <Card 
+          <Card
             title="CI/CD pipeline"
             link="/projects/#ci-cd-pipeline"
             icon="/ci-cd.png"
             link_button
           >
             <p>
-              Built a <Highlight text="CI/CD pipeline" /> from concept to production, 
+              Built a <Highlight text="CI/CD pipeline" /> from concept to production,
               combining existing and new systems.
             </p>
           </Card>
@@ -127,15 +135,17 @@ const Home = () => {
           </Card>
         </div>
       </Section>
-      <Section 
+      <Section
         title={`Let's work "together"!`}
         className="lets-work-together text-center center-all"
       >
         <p>
-          <DecoratedText text={[
-            `Have a project in mind or just want to chat about tech over tea? I'm always open to new`,
-            '"opportunities" and "conversations".'
-          ].join(' ')} />
+          <DecoratedText
+            text={[
+              `Have a project in mind or just want to chat about tech over tea? I'm always open to new`,
+              '"opportunities" and "conversations".',
+            ].join(' ')}
+          />
         </p>
         <p>
           <Link className="btn-bg inline focus" href={`mailto:${global_values.email}`}>

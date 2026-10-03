@@ -31,7 +31,7 @@ function unique(list = []) {
     if (index <= 0) return true;
     return `${current_list[index - 1]}`.toLowerCase() != `${item}`.toLowerCase();
   });
-};
+}
 
 /**
  * Renders a list of tags with their corresponding links fetched from the
@@ -53,9 +53,9 @@ function TagList({ tags = [], caption = '', no_sort = false }) {
       <div className="tags-container">
         {tags_to_render.map((tag, index) => {
           return (
-            <div 
-              key={`tag-item-${index}`} 
-              className="tag-item simple" 
+            <div
+              key={`tag-item-${index}`}
+              className="tag-item simple"
               title={tag}
             >
               {tag}

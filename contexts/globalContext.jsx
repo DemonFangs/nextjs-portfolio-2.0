@@ -15,7 +15,7 @@ const EXPERIENCE_OVERIVIEW = {
     { text: 'All experiences', query_value: PANEL_QUERY_VALUES.all },
     { text: 'Projects', query_value: PANEL_QUERY_VALUES.projects },
     { text: 'Experience in years', query_value: PANEL_QUERY_VALUES.timeline },
-  ]
+  ],
 }
 
 // Create Context object.

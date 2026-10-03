@@ -25,7 +25,7 @@
     calc((var(--_sm-gap) * $_multiplier) * -1.2)
   );
   right: var(--_bg-gap);
-  
+
   color: white;
   font-size: max(
     calc(var(--text-size-sm) * $_multiplier),
@@ -48,7 +48,6 @@
 
   display: flex;
   flex-direction: column;
-  // width: var(--card-width);
 
   @media print {
     display: block;
@@ -60,7 +59,7 @@
     & > div:last-child::before {
       content: attr(data-card-title) ':' ;
       display: inline-block;
-      
+
       height: min-content;
       width: min-content;
       padding: 0;
@@ -113,7 +112,7 @@
       padding: calc(var(--_md-gap) * var(--_multiplier));
       height: 100px;
     }
-    
+
     @media (max-width: 720px) {
       --_multiplier: 4;
     }
@@ -223,12 +222,16 @@
   --_bg-gap: calc(var(--global-gap) * 0.75);
   --_multiplier: 0.65;
 
+  --_bg-color: var(--segment-bg-dark);
+
   display: flex;
   flex-direction: column;
-  padding: var(--_md-gap) var(--_bg-gap);
+  padding-block: 0 var(--_md-gap);
+  padding-inline: var(--_bg-gap);
   gap: var(--_md-gap);
   position: relative;
-  
+  background-color: var(--_bg-color);
+
   @media print {
     padding: 0;
     width: 100%;
@@ -239,23 +242,25 @@
   }
 
   &.no-box {
+    --_bg-color: transparent
     border: none;
     box-shadow: none;
-    background: transparent;
     padding: 0;
   }
 
-  &.deprecated::before {
+  &.deprecated .segment-header-container::before {
     @include deprecated(var(--_multiplier));
 
     content: "Deprecated";
     position: absolute;
+    bottom: 0.5rem;
+    z-index: 2;
     line-height: 1.4;
   }
 
   &:not(.no-box):hover {
-    background: var(--segment-bg-dark);
-    transform: translateX(8px);
+    --_bg-color: var(--segment-bg-dark);
+    border: 2px solid var(--accent-color);
   }
 
   .sub-segment {
@@ -266,6 +271,37 @@
 
     &:not(:last-child) {
       margin-bottom: 16px;
+    }
+  }
+
+  .segment-header.follow {
+    container-type: scroll-state;
+    container-name: segment-header-box;
+    position: sticky;
+
+    margin-block: 2px;
+    top: var(--follow-offset);
+    z-index: 1;
+    background-color: black;
+
+    @container scroll-state(scrollable: top) {
+        .segment-header-container {
+            color: red;
+            border-top: 2px solid var(--accent-color);
+        }
+    }
+
+    .segment-header-container {
+      padding-block: var(--_md-gap) var(--_bg-gap);
+      background-color: var(--_bg-color);
+    }
+
+    @media (max-width: 1024px) {
+      --follow-offset: 90px;
+    }
+
+    @media (max-width: 720px) {
+      --follow-offset: 85px;
     }
   }
 
@@ -291,6 +327,9 @@
   hr {
     margin-block: var(--_bg-gap);
     border-color: var(--segment-bg-light);
+  }
+  .segment-header.follow + hr {
+      margin-top: 0;
   }
 
   .sub-segment {

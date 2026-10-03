@@ -1,3 +1,5 @@
+import Link from 'next/link';
+
 import Highlight from "./Highlight";
 
 /**
@@ -13,7 +15,7 @@ import Highlight from "./Highlight";
  * @property {string|RegExp} to_match The string to match to apply the
  * wrapper
  * @property {replaceWith} replaceWith The function that wraps and decorates
- * the passed text 
+ * the passed text
  */
 
 /**
@@ -22,32 +24,32 @@ import Highlight from "./Highlight";
  * Highlight component.
  * @property {DecorationPattern} BOLD For wrapping matched text inside a bold tag.
  * @property {DecorationPattern} CODE For wrapping matched text inside a code tag.
- * @property {DecorationPattern} INLINE_LINK For wrapping matched text inside a custom 
+ * @property {DecorationPattern} INLINE_LINK For wrapping matched text inside a custom
  * anchor tag.
  * @property {DecorationPattern} DEPRECATED For wrapping matched text inside a custom span
  * tag.
- * @property {DecorationPattern} TOOLTIP For wrapping matched text inside a custom 
+ * @property {DecorationPattern} TOOLTIP For wrapping matched text inside a custom
  * abbreviation and definition tag.
  */
 
 const DEFINITIONS_FOR_ABBREVIATIONS = {
   SSP: [
     'Supply-Side Platform (SSP) allows publishers to manage their ad inventory and',
-    'enables buyers to bid on and purchase ad slots for serving their ads.'
+    'enables buyers to bid on and purchase ad slots for serving their ads.',
   ].join(' '),
   bidders: [
     'Bidders are buyers (demand-side platforms or SSPs) that compete in real-time',
-    'auctions to purchase ad slots and serve their ads.'
+    'auctions to purchase ad slots and serve their ads.',
   ],
   'Ads.txt': [
     'Ads.txt is a file that lists authorized sellers (SSPs and ad networks)',
     'approved by the publisher to sell their ad inventory, designating them',
-    'as direct partners or resellers.'
+    'as direct partners or resellers.',
   ],
   IAB: [
     'Interactive Advertising Bureau (IAB) is an industry organization that',
     'establishes technical standards, guidelines, and best practices to ensure',
-    'consistency and transparency across the digital advertising ecosystem.'
+    'consistency and transparency across the digital advertising ecosystem.',
   ],
 };
 
@@ -59,15 +61,15 @@ const DECORATION_PATTERNS = {
       return (
         <Highlight key={key} text={text.replace(/"/g, '')} />
       );
-    }
+    },
   },
   BOLD: {
-    to_match: /(\*\*[^\*]+\*\*)/,
+    to_match: /(\*\*[^*]+\*\*)/,
     replaceWith: (key, text) => {
       return (
         <b key={key}>{text.replace(/\*/g, '')}</b>
       );
-    }
+    },
   },
   CODE: {
     to_match: /(`[^`]+`)/,
@@ -75,32 +77,49 @@ const DECORATION_PATTERNS = {
       return (
         <code key={key}>{text.replace(/`/g, '')}</code>
       );
-    }
+    },
   },
   INLINE_LINK: {
-    to_match: /(\[[^\]]+\]\([^\)]+\))/,
+    to_match: /(\[[^\]]+\]\([^)]+\))/,
     replaceWith: (key, text) => {
       const [content, link] = sanitizeAfterMatch(text, /\[|\)/, '](');
+      const is_local_link = (/^\//).test(link);
+
+      if (!is_local_link) {
+        return (
+          <Link
+            key={key}
+            className="inline-link external-link"
+            target="_blank"
+            href={link}
+            title={`Go to ${content}`}
+          >
+            <span>{content}</span>
+            <span>↗</span>
+          </Link>
+        );
+      }
+
       return (
         <a
-          key={key} 
+          key={key}
           className="inline-link"
           href={link}
           title={`Go to ${content}`}
         >{content}</a>
       );
-    }
+    },
   },
   DEPRECATED: {
     to_match: /(\[\[deprecated\]\])/i,
     replaceWith: (key) => {
       return (
-        <span 
-          key={key} 
+        <span
+          key={key}
           className="deprecated-inline"
         >deprecated</span>
       );
-    }
+    },
   },
   TOOLTIP: {
     to_match: /(::[^:]+::)/,
@@ -113,7 +132,14 @@ const DECORATION_PATTERNS = {
           </abbr>
         </dfn>
       );
-    }
+    },
+  },
+  LINK: {
+    to_match: /\[[^\]]+\]\([)]+\)/,
+    replaceWith: (key, text) => {
+      const [alias, href] = text.replace(/\[\)/g, '').split('](');
+      console.log({ alias, href });
+    },
   },
 };
 
@@ -137,7 +163,7 @@ function sanitizeAfterMatch(text, clean, split_by) {
 }
 
 /**
- * Validates whether the passed text is a valid string and 
+ * Validates whether the passed text is a valid string and
  * whether it matches the passed pattern
  * @param {string} text The text to validate
  * @param {string|RegExp} to_match The pattern to match
@@ -146,7 +172,7 @@ function sanitizeAfterMatch(text, clean, split_by) {
  */
 function findValidMatch(text, to_match) {
   return Boolean(
-    typeof text === 'string' && text.match(to_match)
+    typeof text === 'string' && text.match(to_match),
   );
 }
 
@@ -177,6 +203,6 @@ function DecoratedText ({ text = '' }) {
       })}
     </>
   )
-};
+}
 
 export default DecoratedText;

@@ -1,3 +1,4 @@
+
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;600;700;900&display=swap');
 
 :root {
@@ -6,6 +7,7 @@
   --main-bg: #000;
   --second-bg: rgb(0 0 0 / 0.8);
   --tirtiary-bg: #0a0a0a;
+  --accent-color: #764ba2;
   --btn-bg: white;
   --btn-alt-bg: rgba(255 255 255 / 0.2);
   --btn-text-color: black;
@@ -23,6 +25,7 @@
   --max-header-width: 500px;
   --card-width: 400px;
   --global-gap: 40px;
+  --follow-offset: 110px;
   --segment-bg-light: rgba(255 255 255 / 0.2);
   --segment-bg-mid: rgba(255 255 255 / 0.02);
   --segment-bg-dark: rgba(255 255 255 / 0.05);
@@ -68,9 +71,9 @@
   display: grid;
   gap: var(--global-gap);
   grid-template-columns: repeat(
-    auto-fit, 
+    auto-fit,
     minmax(
-      min($min-column-size, 100%), 
+      min($min-column-size, 100%),
       1fr
     )
   );
@@ -278,14 +281,8 @@ hr {
     z-index: -1;
 
     &.profile-pic {
-      // background-image: url('../public/profile_pic.jpg');
       z-index: 1;
       background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-      // background-size: contain;
-      // background-repeat: no-repeat;
-      // background-position: center;
-      // mask-clip: view-box;
-      // background-clip: padding-box;
       clip-path: polygon(0 0, 100% 0, 100% 100%, 30% 100%);
       opacity: 0.1;
     }
@@ -328,7 +325,7 @@ hr {
       }
     }
   }
-  
+
   .image-wrapper {
     width: 50%;
     text-align: right;
@@ -449,7 +446,7 @@ hr {
       display: block;
     }
   }
-  
+
   img {
     filter: invert(1) grayscale(100);
 
@@ -488,7 +485,7 @@ hr {
     transform: translateY(-2px);
     box-shadow: 0 8px 24px rgba(255 255 255 / 0.2);
   }
-  
+
   &:not(:last-child) {
     margin-right: 20px;
   }
@@ -528,7 +525,7 @@ hr {
     }
   }
 
-  &::after {
+  &:not(.external-link)::after {
     content: '→';
     margin-left: 2px;
     display: inline-block;
@@ -629,6 +626,10 @@ p.sub-point {
   color: var(--second-text-color);
   background-color: var(--tirtiary-bg);
   padding: calc(var(--global-gap) * 0.50);
+
+  &.alt-bg {
+    background-color: var(--main-bg);
+  }
 }
 
 @media print {

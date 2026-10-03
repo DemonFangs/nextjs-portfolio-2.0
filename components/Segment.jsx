@@ -4,28 +4,32 @@ import TagList from './TagList';
 
 /**
  * Renders a segment header
- * @param {object} props Set of attributes for Segment 
+ * @param {object} props Set of attributes for Segment
  * @param {string} props.title Header text to render
  * @param {string} props.sub_text The sub-text or description for the header
  * @param {string} props.highlight Highlighted header
  */
 function SegmentHeader({ title, sub_text, highlight }) {
   return (
-    <div className="segment-header">
-      <div className="header">
-        <h2>{title}</h2>
-        <div className="segment-header-highlight">
-          <Highlight text={highlight} bg />
+    <div className="segment-header follow">
+      <div className="segment-header-container">
+        <div className="header">
+          <h2>{title}</h2>
+          <div className="segment-header-highlight">
+            <Highlight text={highlight} bg />
+          </div>
+        </div>
+        <div>
+          <DecoratedText text={sub_text} />
         </div>
       </div>
-      <div>{sub_text}</div>
     </div>
   );
-};
+}
 
 /**
  * Renders a segment content
- * @param {object} props Set of attributes for Segment 
+ * @param {object} props Set of attributes for Segment
  * @param {JSX.Element[]} props.children Segment children
  * @param {string} props.title Sub-eader of the content (if any)
  * @param {string} props.id Segment DOM Id
@@ -41,7 +45,7 @@ function SegmentContent({ title = '', children = [], id = '' }) {
 
 /**
  * Renders a segment footer
- * @param {object} props Set of attributes for Segment 
+ * @param {object} props Set of attributes for Segment
  * @param {JSX.Element[]} props.children Segment footer children
  */
 function SegmentFooter({ tags = [] }) {
@@ -51,11 +55,11 @@ function SegmentFooter({ tags = [] }) {
       <div><TagList tags={tags} /></div>
     </div>
   )
-};
+}
 
 /**
  * Renders a sub segment that may reside inside a segment
- * @param {object} props Set of attributes for Section 
+ * @param {object} props Set of attributes for Section
  * @param {JSX.Element[]} props.children Section children
  * @param {string} props.className Section additional DOM classNames
  * @param {string} props.id Section DOM Id
@@ -94,12 +98,15 @@ function SubSegment({ children = [], className = '', id = '', icon = '', log = f
 
 /**
  * Renders a special segment
- * @param {object} props Set of attributes for Section 
+ * @param {object} props Set of attributes for Section
  * @param {JSX.Element[]} props.children Section children
  * @param {string} props.className Section additional DOM classNames
  * @param {string} props.id Section DOM Id
  */
 function Segment({ children = [], className = '', id = '' }) {
+  // const segment_header = children.find(child => (child.type?.name === 'SegmentHeader'));
+  // const content = children.filter(child => (child.type?.name !== 'SegmentHeader'));
+
   return (
     <section className={`segment ${className}`} id={id}>
       <div className="container">
